@@ -9,6 +9,18 @@
   </head>
 
   <body>
-    <%= yield %>
+    <aside>
+      <h2>Menu</h2>
+      <hr>
+      <ul>
+        <li><%= link_to  "Facilities", facilities_path %></li>
+        <li><%= link_to  "Facilities Items", facility_items_path %></li>
+        <li><%= link_to  "Templates", templates_path %></li>
+        <li><%= link_to  "Questions", questions_path %></li>
+      </ul>
+    </aside>
+    <section>
+        <%= yield %>
+    </section>    
   </body>
 </html>

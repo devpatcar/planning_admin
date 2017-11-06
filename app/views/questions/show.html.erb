@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Question:</strong>
+  <%= @question.question %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @question.description %>
+</p>
+
+<p>
+  <strong>Template:</strong>
+  <%= @question.template_id %>
+</p>
+
+<p>
+  <strong>Required:</strong>
+  <%= @question.required %>
+</p>
+
+<p>
+  <strong>Images:</strong>
+  <%= @question.images %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @question.comment %>
+</p>
+
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Back', questions_path %>
