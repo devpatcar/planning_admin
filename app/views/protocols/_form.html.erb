@@ -1,0 +1,37 @@
+<%= form_with(model: protocol, local: true) do |form| %>
+  <% if protocol.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(protocol.errors.count, "error") %> prohibited this protocol from being saved:</h2>
+
+      <ul>
+      <% protocol.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :facility_item_id %>
+    <%= form.number_field :facility_item_id, id: :protocol_facility_item_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :template_id %>
+    <%= form.number_field :template_id, id: :protocol_template_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :result_id %>
+    <%= form.number_field :result_id, id: :protocol_result_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :completed %>
+    <%= form.check_box :completed, id: :protocol_completed %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

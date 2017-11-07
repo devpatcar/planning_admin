@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resources :templates
+  resources :users
+  resources :results
+  resources :protocols
+  resources :schedulings
+  resources :templates do
+    get 'facility_items', on: :member
+  end
   resources :questions
   root 'admin#index'
   resources :facility_items

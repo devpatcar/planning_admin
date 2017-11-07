@@ -8,6 +8,8 @@
     <%= link_to  item.name, item %>
   <% end %>
 </p>
-
+<%= link_to 'Add Faciliy Item', new_facility_item_path(@facility) %>
 <%= link_to 'Edit', edit_facility_path(@facility) %> |
 <%= link_to 'Back', facilities_path %>
+
+<%= [@facility] %>

@@ -8,17 +8,31 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <aside>
-      <h2>Menu</h2>
-      <hr>
-      <ul>
-        <li><%= link_to  "Facilities", facilities_path %></li>
-        <li><%= link_to  "Facilities Items", facility_items_path %></li>
-        <li><%= link_to  "Templates", templates_path %></li>
-        <li><%= link_to  "Questions", questions_path %></li>
-      </ul>
-    </aside>
+  <body class="container">  
+    <section>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <%= link_to  "Admin", root_url, {class: "navbar-brand"} %>   
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">                
+                <li class="nav-item">
+                    <%= link_to  "Facilities", facilities_path, {class: "nav-link"} %>
+                </li>
+                <li class="nav-item">
+                    <%= link_to  "Templates", templates_path, {class: "nav-link"} %>
+                </li>
+                <li class="nav-item">
+                    <%= link_to  "Questions", questions_path, {class: "nav-link"} %>
+                </li>
+                <li class="nav-item">
+                    <%= link_to  "Scheduling", schedulings_path, {class: "nav-link"} %>
+                </li>
+              </ul>              
+            </div>
+          </nav>
+    </section>     
     <section>
         <%= yield %>
     </section>    

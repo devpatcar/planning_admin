@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Results</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Protocol</th>
+      <th>Answer</th>
+      <th>Question</th>
+      <th>Image url</th>
+      <th>User</th>
+      <th>Comment</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @results.each do |result| %>
+      <tr>
+        <td><%= result.protocol_id %></td>
+        <td><%= result.answer %></td>
+        <td><%= result.question %></td>
+        <td><%= result.image_url %></td>
+        <td><%= result.user %></td>
+        <td><%= result.comment %></td>
+        <td><%= link_to 'Show', result %></td>
+        <td><%= link_to 'Edit', edit_result_path(result) %></td>
+        <td><%= link_to 'Destroy', result, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Result', new_result_path %>

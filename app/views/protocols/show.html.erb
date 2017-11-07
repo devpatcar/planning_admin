@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Facility item:</strong>
+  <%= @protocol.facility_item_id %>
+</p>
+
+<p>
+  <strong>Template:</strong>
+  <%= @protocol.template_id %>
+</p>
+
+<p>
+  <strong>Result:</strong>
+  <%= @protocol.result_id %>
+</p>
+
+<p>
+  <strong>Completed:</strong>
+  <%= @protocol.completed %>
+</p>
+
+<%= link_to 'Edit', edit_protocol_path(@protocol) %> |
+<%= link_to 'Back', protocols_path %>

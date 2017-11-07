@@ -3,10 +3,14 @@
 <p>
   <strong>Name:</strong>
   <%= @template.name %>
+  <% @template.schedulings.each do |item| %>
+  <strong>Schedulings:</strong>
+  <%= link_to  item.name, item %>
+  <% end %>
   <% @template.questions.each do |item| %>
   <strong>Questions:</strong>
   <%= link_to  item.question, item %>
-<% end %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_template_path(@template) %> |

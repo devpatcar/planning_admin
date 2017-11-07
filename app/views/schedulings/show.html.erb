@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @scheduling.name %>
+</p>
+
+<p>
+  <strong>Template:</strong>
+  <%= @scheduling.template_id %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @scheduling.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @scheduling.end_date %>
+</p>
+
+<p>
+  <strong>Monday:</strong>
+  <%= @scheduling.monday %>
+</p>
+
+<p>
+  <strong>Thuesday:</strong>
+  <%= @scheduling.thuesday %>
+</p>
+
+<p>
+  <strong>Wendsday:</strong>
+  <%= @scheduling.wendsday %>
+</p>
+
+<p>
+  <strong>Thursday:</strong>
+  <%= @scheduling.thursday %>
+</p>
+
+<p>
+  <strong>Friday:</strong>
+  <%= @scheduling.friday %>
+</p>
+
+<p>
+  <strong>Saturday:</strong>
+  <%= @scheduling.saturday %>
+</p>
+
+<p>
+  <strong>Sunday:</strong>
+  <%= @scheduling.sunday %>
+</p>
+
+<p>
+  <strong>Week duration:</strong>
+  <%= @scheduling.week_duration %>
+</p>
+
+<p>
+  <strong>Delay:</strong>
+  <%= @scheduling.delay %>
+</p>
+
+<p>
+  <strong>Notification:</strong>
+  <%= @scheduling.notification %>
+</p>
+
+<%= link_to 'Edit', edit_scheduling_path(@scheduling) %> |
+<%= link_to 'Back', schedulings_path %>

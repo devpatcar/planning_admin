@@ -1,6 +1,5 @@
 class FacilityItemsController < ApplicationController
   before_action :set_facility_item, only: [:show, :edit, :update, :destroy]
-
   # GET /facility_items
   # GET /facility_items.json
   def index
@@ -71,4 +70,5 @@ class FacilityItemsController < ApplicationController
     def facility_item_params
       params.require(:facility_item).permit(:name, :facility_id)
     end
+
 end

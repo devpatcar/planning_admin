@@ -1,1 +1,15 @@
-admin
+<h1>Work to do</h1>
+<p><%= @date %></p>
+<strong>Active:</strong>
+<%= @work.count %>
+<strong>Finished:</strong>
+<%= @finished %>
+
+<ul>
+    <% @work.each do |item| %>
+    <%= item.template.name %>, <%= item.name %>
+        <% @facility_items.each do |items| %>
+          <li><%= items.name %></li>  
+        <% end %>
+    <% end %>      
+</ul>

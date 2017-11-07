@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171106084246) do
+ActiveRecord::Schema.define(version: 20171107100106) do
+
+  create_table "answers", force: :cascade do |t|
+    t.integer "question_id"
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "facilities", force: :cascade do |t|
     t.string "name"
@@ -21,6 +28,23 @@ ActiveRecord::Schema.define(version: 20171106084246) do
   create_table "facility_items", force: :cascade do |t|
     t.string "name"
     t.integer "facility_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "template_id"
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.integer "template_id"
+    t.integer "facility_item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "protocols", force: :cascade do |t|
+    t.integer "facility_item_id"
+    t.integer "template_id"
+    t.integer "result_id"
+    t.boolean "completed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -36,7 +60,43 @@ ActiveRecord::Schema.define(version: 20171106084246) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "results", force: :cascade do |t|
+    t.integer "protocol_id"
+    t.string "answer"
+    t.string "question"
+    t.string "image_url"
+    t.string "user"
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "schedulings", force: :cascade do |t|
+    t.string "name"
+    t.integer "template_id"
+    t.date "start_date"
+    t.date "end_date"
+    t.boolean "monday"
+    t.boolean "thuesday"
+    t.boolean "wendsday"
+    t.boolean "thursday"
+    t.boolean "friday"
+    t.boolean "saturday"
+    t.boolean "sunday"
+    t.integer "week_duration"
+    t.integer "delay"
+    t.text "notification"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "templates", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Facility</th>
+      <th>Facility</th>     
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,7 +15,7 @@
     <% @facility_items.each do |facility_item| %>
       <tr>
         <td><%= facility_item.name %></td>
-        <td><%= facility_item.facility_id %></td>
+        <td><%= facility_item.facility_id %></td>      
         <td><%= link_to 'Show', facility_item %></td>
         <td><%= link_to 'Edit', edit_facility_item_path(facility_item) %></td>
         <td><%= link_to 'Destroy', facility_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>

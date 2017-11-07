@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  facility_item_id: 1
+  template_id: 1
+  result_id: 1
+  completed: false
+
+two:
+  facility_item_id: 1
+  template_id: 1
+  result_id: 1
+  completed: false

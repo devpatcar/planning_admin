@@ -14,7 +14,7 @@ class TemplatesController < ApplicationController
 
   # GET /templates/new
   def new
-    @template = Template.new
+    @template = Template.new    
   end
 
   # GET /templates/1/edit
@@ -24,10 +24,9 @@ class TemplatesController < ApplicationController
   # POST /templates
   # POST /templates.json
   def create
-    @template = Template.new(template_params)
-
+    @template = Template.new(template_params)   
     respond_to do |format|
-      if @template.save
+      if @template.save              
         format.html { redirect_to @template, notice: 'Template was successfully created.' }
         format.json { render :show, status: :created, location: @template }
       else
@@ -39,7 +38,7 @@ class TemplatesController < ApplicationController
 
   # PATCH/PUT /templates/1
   # PATCH/PUT /templates/1.json
-  def update
+  def update   
     respond_to do |format|
       if @template.update(template_params)
         format.html { redirect_to @template, notice: 'Template was successfully updated.' }
@@ -59,6 +58,10 @@ class TemplatesController < ApplicationController
       format.html { redirect_to templates_url, notice: 'Template was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def facility_items
+    @facility_items = FacilityItem.all   
   end
 
   private
