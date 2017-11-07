@@ -1,6 +1,5 @@
-<h1>Editing Facility Item</h1>
+<h1><%= @facility.name %> - Editing Facility Item</h1>
 
 <%= render 'form', facility_item: @facility_item %>
 
-<%= link_to 'Show', @facility_item %> |
-<%= link_to 'Back', facility_items_path %>
+<%= link_to 'Back', facility_facility_items_path, class: "btn btn-secondary" %>

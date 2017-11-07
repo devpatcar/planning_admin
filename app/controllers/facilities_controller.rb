@@ -12,6 +12,9 @@ class FacilitiesController < ApplicationController
   def show
   end
 
+  def addfacilityitem
+    @facility.facility_items.build
+  end
   # GET /facilities/new
   def new
     @facility = Facility.new

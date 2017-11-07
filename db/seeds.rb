@@ -6,7 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 if Facility.count == 0    
-    100.times do |i|
-        Facility.create!(name: Faker::Address.city)
-    end
+    10.times do |i|        
+        facilities = Facility.create!(name: Faker::Address.city)
+        3.times do |a|
+            FacilityItem.create!(name: Faker::Address.street_name, facility_id: facilities.id)
+        end           
+    end   
 end

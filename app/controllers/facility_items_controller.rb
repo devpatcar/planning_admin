@@ -1,9 +1,10 @@
 class FacilityItemsController < ApplicationController
-  before_action :set_facility_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_facility_item, only: [:show, :edit, :update, :destroy] 
+  before_action :set_facility, only: [:index,:show, :new, :edit]
   # GET /facility_items
   # GET /facility_items.json
   def index
-    @facility_items = FacilityItem.all
+    @facility_items = FacilityItem.where(facility_id: @facility.id).order(:name).page params[:page]   
   end
 
   # GET /facility_items/1
@@ -13,7 +14,7 @@ class FacilityItemsController < ApplicationController
 
   # GET /facility_items/new
   def new
-    @facility_item = FacilityItem.new
+    @facility_item = FacilityItem.new(facility_params)   
   end
 
   # GET /facility_items/1/edit
@@ -27,7 +28,7 @@ class FacilityItemsController < ApplicationController
 
     respond_to do |format|
       if @facility_item.save
-        format.html { redirect_to @facility_item, notice: 'Facility item was successfully created.' }
+        format.html { redirect_to facility_facility_items_path(@facility_item.facility_id), notice: 'Facility item was successfully created.' }
         format.json { render :show, status: :created, location: @facility_item }
       else
         format.html { render :new }
@@ -41,7 +42,7 @@ class FacilityItemsController < ApplicationController
   def update
     respond_to do |format|
       if @facility_item.update(facility_item_params)
-        format.html { redirect_to @facility_item, notice: 'Facility item was successfully updated.' }
+        format.html { redirect_to facility_facility_items_path(@facility_item.facility_id), notice: 'Facility item was successfully updated.' }
         format.json { render :show, status: :ok, location: @facility_item }
       else
         format.html { render :edit }
@@ -55,7 +56,7 @@ class FacilityItemsController < ApplicationController
   def destroy
     @facility_item.destroy
     respond_to do |format|
-      format.html { redirect_to facility_items_url, notice: 'Facility item was successfully destroyed.' }
+      format.html { redirect_to facility_facility_items_path(facility_params), notice: 'Facility item was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +70,14 @@ class FacilityItemsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def facility_item_params
       params.require(:facility_item).permit(:name, :facility_id)
+    end
+
+    def facility_params
+      params.permit(:facility_id)
+    end
+
+    def set_facility
+      @facility = Facility.find(facility_params[:facility_id])
     end
 
 end

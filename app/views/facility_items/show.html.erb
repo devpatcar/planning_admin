@@ -7,8 +7,9 @@
 
 <p>
   <strong>Facility:</strong>
-  <%= @facility_item.facility_id %>
+  <%= @facility.name %>
 </p>
 
-<%= link_to 'Edit', edit_facility_item_path(@facility_item) %> |
-<%= link_to 'Back', facility_items_path %>
+<%= link_to 'Back', facility_facility_items_path(), class: "btn btn-secondary" %>
+<%= link_to 'Edit', edit_facility_facility_item_path(@facility, @facility_item), class: "btn btn-primary" %>
+

@@ -1,4 +1,11 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <div id="notice" class="alert alert-primary" role="alert">
+    <%= notice %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>  
+<% end %>
 
 <h1>Facilities</h1>
 <%= paginate @facilities, theme: 'twitter-bootstrap-4' %>
@@ -15,7 +22,11 @@
       <% @facilities.each do |facility| %>
         <tr>
           <td><%= facility.name %></td>          
-          <td class="float-right"><%= link_to 'Show', facility, {class: "btn btn-primary"} %><%= link_to 'Edit', edit_facility_path(facility), {class: "btn btn-secondary"} %><%= link_to 'Destroy', facility, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td class="float-right">
+            <%= link_to 'Show', facility, {class: "btn btn-primary"} %>
+            <%= link_to 'Edit', edit_facility_path(facility), {class: "btn btn-secondary"} %>
+            <%= link_to 'Destroy', facility, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
         </tr>
       <% end %>
     </tbody>

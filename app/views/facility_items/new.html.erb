@@ -1,5 +1,5 @@
-<h1>New Facility Item</h1>
+<h1><%= @facility.name %> - New Facility Item</h1>
 
 <%= render 'form', facility_item: @facility_item %>
 
-<%= link_to 'Back', facility_items_path %>
+<%= link_to 'Back', facility_facility_items_path, class: 'btn btn-secondary' %>
