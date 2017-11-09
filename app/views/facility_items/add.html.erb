@@ -1,4 +1,4 @@
-<h1>Add Facility Items</h1>
+<h1><%= @template.name %> - Add Facility Items</h1>
 <%= paginate @facility, theme: 'twitter-bootstrap-4' %>
 <%= page_entries_info @facility %>
 <%= form_tag('/templates/1/addFacilityItems', method: "post") do %>
@@ -17,8 +17,12 @@
           <div class="card-body">
               <% item.facility_items.each do |facility_item| %>              
               <div class="form-check">
-                  <label class="form-check-label">
-                      <%= check_box_tag 'items[]', facility_item.id, false %>
+                  <label class="form-check-label">                                       
+                        <% if @template.template_facility_item.exists?(facility_item.template_facility_item) %>
+                          <%= check_box_tag 'items[]', facility_item.id, true %>
+                        <% else %>
+                          <%= check_box_tag 'items[]', facility_item.id, false %>    
+                        <% end %>        
                     <%= facility_item.name %>
                   </label>
                 </div>
@@ -28,7 +32,7 @@
       </div>
   <% end %>  
 </div>
-  <%= submit_tag("Add") %>
+<%= submit_tag("Add",:class => 'btn btn-success float-right') %>
 <% end %>
 <%= link_to 'Back', template_facility_items_path, class: "btn btn-secondary" %>
 

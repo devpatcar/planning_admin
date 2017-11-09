@@ -1,14 +1,17 @@
 class FacilityItemsController < ApplicationController
   before_action :set_facility_item, only: [:show, :edit, :update, :destroy] 
   before_action :set_facility, only: [:index,:show, :new, :edit]
-  before_action :set_template, only: [:index,:show, :new, :edit]
+  before_action :set_template, only: [:add, :index,:show, :new, :edit]
   # GET /facility_items
   # GET /facility_items.json
   def index
     if facility_params[:facility_id]
       @facility_items = FacilityItem.where(facility_id: @facility.id).order(:name).page params[:page]
-    else
-      @facility_items = FacilityItem.where(template_id: @template.id).order(:name).page params[:page]
+    else  
+      @facility_items = []   
+      for value in @template.template_facility_item do
+        @facility_items.push(FacilityItem.find(value.facility_item_id))
+      end       
     end
   end
 

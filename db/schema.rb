@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171107100106) do
+ActiveRecord::Schema.define(version: 20171109102140) do
 
   create_table "answers", force: :cascade do |t|
     t.integer "question_id"
@@ -86,6 +86,13 @@ ActiveRecord::Schema.define(version: 20171107100106) do
     t.integer "week_duration"
     t.integer "delay"
     t.text "notification"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "template_facility_items", force: :cascade do |t|
+    t.integer "template_id"
+    t.integer "facility_item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

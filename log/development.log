@@ -23068,3 +23068,750 @@ Unpermitted parameter: :template_id
 Completed 200 OK in 154ms (Views: 143.9ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-11-09 10:55:14 +0100
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdminController#index as HTML
+  [1m[36mScheduling Load (1.0ms)[0m  [1m[34mSELECT "schedulings".* FROM "schedulings" WHERE "schedulings"."start_date" = ?[0m  [["start_date", "2017-11-09"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "protocols" WHERE "protocols"."completed" = ?[0m  [["completed", "t"]]
+  Rendering admin/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "schedulings" WHERE "schedulings"."start_date" = ?[0m  [["start_date", "2017-11-09"]]
+  Rendered admin/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 2342ms (Views: 2238.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/facilities" for 127.0.0.1 at 2017-11-09 10:55:35 +0100
+Processing by FacilitiesController#index as HTML
+  Rendering facilities/index.html.erb within layouts/application
+  [1m[35m (19.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered facilities/index.html.erb within layouts/application (2394.9ms)
+Completed 200 OK in 2630ms (Views: 2570.3ms | ActiveRecord: 20.0ms)
+
+
+Started GET "/templates" for 127.0.0.1 at 2017-11-09 10:55:39 +0100
+Processing by TemplatesController#index as HTML
+  Rendering templates/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "templates"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "templates" ORDER BY "templates"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" ORDER BY "templates"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered templates/index.html.erb within layouts/application (59.7ms)
+Completed 200 OK in 272ms (Views: 244.8ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/templates/1" for 127.0.0.1 at 2017-11-09 10:55:41 +0100
+Processing by TemplatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" WHERE "templates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering templates/show.html.erb within layouts/application
+  Rendered templates/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 243ms (Views: 194.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/templates/1/facility_items" for 127.0.0.1 at 2017-11-09 10:55:42 +0100
+Processing by FacilityItemsController#index as HTML
+  Parameters: {"template_id"=>"1"}
+Unpermitted parameter: :template_id
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" WHERE "templates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: :template_id
+  Rendering facility_items/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facility_items" WHERE "facility_items"."template_id" = ?[0m  [["template_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facility_items" WHERE "facility_items"."template_id" = ? ORDER BY "facility_items"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["template_id", 1], ["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT  "facility_items".* FROM "facility_items" WHERE "facility_items"."template_id" = ? ORDER BY "facility_items"."name" ASC LIMIT ? OFFSET ?[0m  [["template_id", 1], ["LIMIT", 25], ["OFFSET", 0]]
+  Rendered facility_items/index.html.erb within layouts/application (75.1ms)
+Completed 200 OK in 333ms (Views: 303.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/templates/1/addFacilityItems" for 127.0.0.1 at 2017-11-09 10:56:22 +0100
+Processing by FacilityItemsController#add as HTML
+  Parameters: {"template_id"=>"1"}
+  Rendering facility_items/add.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 151]]
+  [1m[36mFacilityItem Load (1.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 153]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 156]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 147]]
+  [1m[36mFacilityItem Load (1.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 152]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 149]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 155]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 150]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 154]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 148]]
+  Rendered facility_items/add.html.erb within layouts/application (166.0ms)
+Completed 200 OK in 390ms (Views: 361.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/templates" for 127.0.0.1 at 2017-11-09 10:58:05 +0100
+Processing by TemplatesController#index as HTML
+  Rendering templates/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "templates"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "templates" ORDER BY "templates"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" ORDER BY "templates"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered templates/index.html.erb within layouts/application (61.1ms)
+Completed 200 OK in 389ms (Views: 359.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/templates/1" for 127.0.0.1 at 2017-11-09 10:58:06 +0100
+Processing by TemplatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTemplate Load (1.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" WHERE "templates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering templates/show.html.erb within layouts/application
+  Rendered templates/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 196ms (Views: 180.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/templates/1/facility_items" for 127.0.0.1 at 2017-11-09 10:58:09 +0100
+Processing by FacilityItemsController#index as HTML
+  Parameters: {"template_id"=>"1"}
+Unpermitted parameter: :template_id
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" WHERE "templates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: :template_id
+  Rendering facility_items/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facility_items" WHERE "facility_items"."template_id" = ?[0m  [["template_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facility_items" WHERE "facility_items"."template_id" = ? ORDER BY "facility_items"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["template_id", 1], ["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacilityItem Load (1.0ms)[0m  [1m[34mSELECT  "facility_items".* FROM "facility_items" WHERE "facility_items"."template_id" = ? ORDER BY "facility_items"."name" ASC LIMIT ? OFFSET ?[0m  [["template_id", 1], ["LIMIT", 25], ["OFFSET", 0]]
+  Rendered facility_items/index.html.erb within layouts/application (51.7ms)
+Completed 200 OK in 269ms (Views: 248.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/templates" for 127.0.0.1 at 2017-11-09 11:00:44 +0100
+Processing by TemplatesController#index as HTML
+  Rendering templates/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "templates"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "templates" ORDER BY "templates"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mTemplate Load (1.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" ORDER BY "templates"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered templates/index.html.erb within layouts/application (62.0ms)
+Completed 200 OK in 319ms (Views: 300.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/templates/1" for 127.0.0.1 at 2017-11-09 11:00:47 +0100
+Processing by TemplatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" WHERE "templates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering templates/show.html.erb within layouts/application
+  Rendered templates/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 198ms (Views: 181.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/templates/1" for 127.0.0.1 at 2017-11-09 11:01:32 +0100
+Processing by TemplatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTemplate Load (1.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" WHERE "templates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering templates/show.html.erb within layouts/application
+  Rendered templates/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 244ms (Views: 213.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/templates/1" for 127.0.0.1 at 2017-11-09 11:01:45 +0100
+Processing by TemplatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" WHERE "templates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering templates/show.html.erb within layouts/application
+  Rendered templates/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 257ms (Views: 236.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/templates/1" for 127.0.0.1 at 2017-11-09 11:02:00 +0100
+Processing by TemplatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" WHERE "templates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering templates/show.html.erb within layouts/application
+  Rendered templates/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 269ms (Views: 249.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/templates/1" for 127.0.0.1 at 2017-11-09 11:02:09 +0100
+Processing by TemplatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTemplate Load (4.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" WHERE "templates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering templates/show.html.erb within layouts/application
+  Rendered templates/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 281ms (Views: 255.9ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/templates/1" for 127.0.0.1 at 2017-11-09 11:02:48 +0100
+Processing by TemplatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTemplate Load (1.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" WHERE "templates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering templates/show.html.erb within layouts/application
+  Rendered templates/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 487ms (Views: 421.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/templates/1" for 127.0.0.1 at 2017-11-09 11:03:06 +0100
+Processing by TemplatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTemplate Load (1.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" WHERE "templates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering templates/show.html.erb within layouts/application
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT  "facility_items".* FROM "facility_items" WHERE "facility_items"."template_id" = ? LIMIT ?[0m  [["template_id", 1], ["LIMIT", 11]]
+  Rendered templates/show.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 245ms (Views: 226.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/templates/1/facility_items" for 127.0.0.1 at 2017-11-09 11:04:21 +0100
+Processing by FacilityItemsController#index as HTML
+  Parameters: {"template_id"=>"1"}
+Unpermitted parameter: :template_id
+  [1m[36mTemplate Load (1.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" WHERE "templates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: :template_id
+  Rendering facility_items/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facility_items" WHERE "facility_items"."template_id" = ?[0m  [["template_id", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facility_items" WHERE "facility_items"."template_id" = ? ORDER BY "facility_items"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["template_id", 1], ["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT  "facility_items".* FROM "facility_items" WHERE "facility_items"."template_id" = ? ORDER BY "facility_items"."name" ASC LIMIT ? OFFSET ?[0m  [["template_id", 1], ["LIMIT", 25], ["OFFSET", 0]]
+  Rendered facility_items/index.html.erb within layouts/application (56.9ms)
+Completed 200 OK in 358ms (Views: 321.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/templates/1/facility_items" for 127.0.0.1 at 2017-11-09 11:04:31 +0100
+Processing by FacilityItemsController#index as HTML
+  Parameters: {"template_id"=>"1"}
+Unpermitted parameter: :template_id
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" WHERE "templates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: :template_id
+  Rendering facility_items/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facility_items" WHERE "facility_items"."template_id" = ?[0m  [["template_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facility_items" WHERE "facility_items"."template_id" = ? ORDER BY "facility_items"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["template_id", 1], ["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT  "facility_items".* FROM "facility_items" WHERE "facility_items"."template_id" = ? ORDER BY "facility_items"."name" ASC LIMIT ? OFFSET ?[0m  [["template_id", 1], ["LIMIT", 25], ["OFFSET", 0]]
+  Rendered facility_items/index.html.erb within layouts/application (50.0ms)
+Completed 200 OK in 257ms (Views: 238.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/templates/1/facility_items" for 127.0.0.1 at 2017-11-09 11:05:29 +0100
+Processing by FacilityItemsController#index as HTML
+  Parameters: {"template_id"=>"1"}
+Unpermitted parameter: :template_id
+  [1m[36mTemplate Load (1.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" WHERE "templates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: :template_id
+  Rendering facility_items/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facility_items" WHERE "facility_items"."template_id" = ?[0m  [["template_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facility_items" WHERE "facility_items"."template_id" = ? ORDER BY "facility_items"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["template_id", 1], ["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."template_id" = ?[0m  [["template_id", 1]]
+  Rendered facility_items/index.html.erb within layouts/application (64.1ms)
+Completed 200 OK in 369ms (Views: 346.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/facilities" for 127.0.0.1 at 2017-11-09 11:05:38 +0100
+Processing by FacilitiesController#index as HTML
+  Rendering facilities/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered facilities/index.html.erb within layouts/application (47.8ms)
+Completed 200 OK in 296ms (Views: 276.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/facilities/153" for 127.0.0.1 at 2017-11-09 11:05:40 +0100
+Processing by FacilitiesController#show as HTML
+  Parameters: {"id"=>"153"}
+  [1m[36mFacility Load (1.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" WHERE "facilities"."id" = ? LIMIT ?[0m  [["id", 153], ["LIMIT", 1]]
+  Rendering facilities/show.html.erb within layouts/application
+  Rendered facilities/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 268ms (Views: 249.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/facilities/153/facility_items" for 127.0.0.1 at 2017-11-09 11:05:42 +0100
+Processing by FacilityItemsController#index as HTML
+  Parameters: {"facility_id"=>"153"}
+  [1m[36mFacility Load (1.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" WHERE "facilities"."id" = ? LIMIT ?[0m  [["id", 153], ["LIMIT", 1]]
+Unpermitted parameter: :facility_id
+  Rendering facility_items/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 153]]
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facility_items" WHERE "facility_items"."facility_id" = ? ORDER BY "facility_items"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["facility_id", 153], ["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacilityItem Load (1.0ms)[0m  [1m[34mSELECT  "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ? ORDER BY "facility_items"."name" ASC LIMIT ? OFFSET ?[0m  [["facility_id", 153], ["LIMIT", 25], ["OFFSET", 0]]
+  Rendered facility_items/index.html.erb within layouts/application (73.1ms)
+Completed 200 OK in 468ms (Views: 438.3ms | ActiveRecord: 5.0ms)
+
+
+Started DELETE "/facilities/153/facility_items/190" for 127.0.0.1 at 2017-11-09 11:05:46 +0100
+Processing by FacilityItemsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JFQfDDQP1xyTgrU0/rGvaUCHP6KHo+rxAkzHTycgljGqcR2FYC8xPWbzkWlIfcugk1XOxpzEgPcw2v82vNLQfg==", "facility_id"=>"153", "id"=>"190"}
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT  "facility_items".* FROM "facility_items" WHERE "facility_items"."id" = ? LIMIT ?[0m  [["id", 190], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "facility_items" WHERE "facility_items"."id" = ?[0m  [["id", 190]]
+  [1m[35m (154.7ms)[0m  [1m[36mcommit transaction[0m
+Unpermitted parameters: :_method, :authenticity_token, :id
+Redirected to http://localhost:3000/facilities/153/facility_items?facility_id=153
+Completed 302 Found in 182ms (ActiveRecord: 155.7ms)
+
+
+Started GET "/facilities/153/facility_items?facility_id=153" for 127.0.0.1 at 2017-11-09 11:05:46 +0100
+Processing by FacilityItemsController#index as HTML
+  Parameters: {"facility_id"=>"153"}
+  [1m[36mFacility Load (1.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" WHERE "facilities"."id" = ? LIMIT ?[0m  [["id", 153], ["LIMIT", 1]]
+Unpermitted parameter: :facility_id
+  Rendering facility_items/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 153]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facility_items" WHERE "facility_items"."facility_id" = ? ORDER BY "facility_items"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["facility_id", 153], ["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT  "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ? ORDER BY "facility_items"."name" ASC LIMIT ? OFFSET ?[0m  [["facility_id", 153], ["LIMIT", 25], ["OFFSET", 0]]
+  Rendered facility_items/index.html.erb within layouts/application (70.1ms)
+Completed 200 OK in 390ms (Views: 361.0ms | ActiveRecord: 2.0ms)
+
+
+Started DELETE "/facilities/153/facility_items/188" for 127.0.0.1 at 2017-11-09 11:05:49 +0100
+Processing by FacilityItemsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Fw5s9v6VqTK2wWOQ9rlDG/oMMI+ZPcYOA9DFWGGOz46ZK25/qrVPE0OwR81AdSfSKd7B64JarAgxRv0h+nyJwQ==", "facility_id"=>"153", "id"=>"188"}
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT  "facility_items".* FROM "facility_items" WHERE "facility_items"."id" = ? LIMIT ?[0m  [["id", 188], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (52.9ms)[0m  [1m[31mDELETE FROM "facility_items" WHERE "facility_items"."id" = ?[0m  [["id", 188]]
+  [1m[35m (44.9ms)[0m  [1m[36mcommit transaction[0m
+Unpermitted parameters: :_method, :authenticity_token, :id
+Redirected to http://localhost:3000/facilities/153/facility_items?facility_id=153
+Completed 302 Found in 110ms (ActiveRecord: 97.9ms)
+
+
+Started GET "/facilities/153/facility_items?facility_id=153" for 127.0.0.1 at 2017-11-09 11:05:49 +0100
+Processing by FacilityItemsController#index as HTML
+  Parameters: {"facility_id"=>"153"}
+  [1m[36mFacility Load (1.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" WHERE "facilities"."id" = ? LIMIT ?[0m  [["id", 153], ["LIMIT", 1]]
+Unpermitted parameter: :facility_id
+  Rendering facility_items/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 153]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facility_items" WHERE "facility_items"."facility_id" = ? ORDER BY "facility_items"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["facility_id", 153], ["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT  "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ? ORDER BY "facility_items"."name" ASC LIMIT ? OFFSET ?[0m  [["facility_id", 153], ["LIMIT", 25], ["OFFSET", 0]]
+  Rendered facility_items/index.html.erb within layouts/application (93.8ms)
+Completed 200 OK in 427ms (Views: 399.6ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/facilities/153/facility_items/189" for 127.0.0.1 at 2017-11-09 11:05:52 +0100
+Processing by FacilityItemsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"1J0CDEaXPM8UCBCo1/084CukrAGc5Ppd35EDKA9OCgNauACFErfa7uF5NPVhMVgp+HZdZYeDkFvtBztRlLxMTA==", "facility_id"=>"153", "id"=>"189"}
+  [1m[36mFacilityItem Load (1.5ms)[0m  [1m[34mSELECT  "facility_items".* FROM "facility_items" WHERE "facility_items"."id" = ? LIMIT ?[0m  [["id", 189], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (13.2ms)[0m  [1m[31mDELETE FROM "facility_items" WHERE "facility_items"."id" = ?[0m  [["id", 189]]
+  [1m[35m (515.6ms)[0m  [1m[36mcommit transaction[0m
+Unpermitted parameters: :_method, :authenticity_token, :id
+Redirected to http://localhost:3000/facilities/153/facility_items?facility_id=153
+Completed 302 Found in 552ms (ActiveRecord: 530.9ms)
+
+
+Started GET "/facilities/153/facility_items?facility_id=153" for 127.0.0.1 at 2017-11-09 11:05:53 +0100
+Processing by FacilityItemsController#index as HTML
+  Parameters: {"facility_id"=>"153"}
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" WHERE "facilities"."id" = ? LIMIT ?[0m  [["id", 153], ["LIMIT", 1]]
+Unpermitted parameter: :facility_id
+  Rendering facility_items/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 153]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facility_items" WHERE "facility_items"."facility_id" = ? ORDER BY "facility_items"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["facility_id", 153], ["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacilityItem Load (1.0ms)[0m  [1m[34mSELECT  "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ? ORDER BY "facility_items"."name" ASC LIMIT ? OFFSET ?[0m  [["facility_id", 153], ["LIMIT", 25], ["OFFSET", 0]]
+  Rendered facility_items/index.html.erb within layouts/application (68.1ms)
+Completed 200 OK in 392ms (Views: 366.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/templates" for 127.0.0.1 at 2017-11-09 11:05:56 +0100
+Processing by TemplatesController#index as HTML
+  Rendering templates/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "templates"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "templates" ORDER BY "templates"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mTemplate Load (1.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" ORDER BY "templates"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered templates/index.html.erb within layouts/application (83.1ms)
+Completed 200 OK in 419ms (Views: 394.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/templates/1" for 127.0.0.1 at 2017-11-09 11:05:57 +0100
+Processing by TemplatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" WHERE "templates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering templates/show.html.erb within layouts/application
+  Rendered templates/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 364ms (Views: 338.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/templates/1/facility_items" for 127.0.0.1 at 2017-11-09 11:05:59 +0100
+Processing by FacilityItemsController#index as HTML
+  Parameters: {"template_id"=>"1"}
+Unpermitted parameter: :template_id
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" WHERE "templates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: :template_id
+  Rendering facility_items/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facility_items" WHERE "facility_items"."template_id" = ?[0m  [["template_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facility_items" WHERE "facility_items"."template_id" = ? ORDER BY "facility_items"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["template_id", 1], ["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."template_id" = ?[0m  [["template_id", 1]]
+  Rendered facility_items/index.html.erb within layouts/application (65.1ms)
+Completed 200 OK in 376ms (Views: 356.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/facilities" for 127.0.0.1 at 2017-11-09 11:06:03 +0100
+Processing by FacilitiesController#index as HTML
+  Rendering facilities/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered facilities/index.html.erb within layouts/application (75.1ms)
+Completed 200 OK in 405ms (Views: 380.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/facilities/151" for 127.0.0.1 at 2017-11-09 11:06:07 +0100
+Processing by FacilitiesController#show as HTML
+  Parameters: {"id"=>"151"}
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" WHERE "facilities"."id" = ? LIMIT ?[0m  [["id", 151], ["LIMIT", 1]]
+  Rendering facilities/show.html.erb within layouts/application
+  Rendered facilities/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 256ms (Views: 234.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/facilities/151/facility_items" for 127.0.0.1 at 2017-11-09 11:06:09 +0100
+Processing by FacilityItemsController#index as HTML
+  Parameters: {"facility_id"=>"151"}
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" WHERE "facilities"."id" = ? LIMIT ?[0m  [["id", 151], ["LIMIT", 1]]
+Unpermitted parameter: :facility_id
+  Rendering facility_items/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 151]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facility_items" WHERE "facility_items"."facility_id" = ? ORDER BY "facility_items"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["facility_id", 151], ["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT  "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ? ORDER BY "facility_items"."name" ASC LIMIT ? OFFSET ?[0m  [["facility_id", 151], ["LIMIT", 25], ["OFFSET", 0]]
+  Rendered facility_items/index.html.erb within layouts/application (73.1ms)
+Completed 200 OK in 447ms (Views: 416.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/facilities" for 127.0.0.1 at 2017-11-09 11:06:11 +0100
+Processing by FacilitiesController#index as HTML
+  Rendering facilities/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered facilities/index.html.erb within layouts/application (62.1ms)
+Completed 200 OK in 312ms (Views: 290.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/facilities/156" for 127.0.0.1 at 2017-11-09 11:06:13 +0100
+Processing by FacilitiesController#show as HTML
+  Parameters: {"id"=>"156"}
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" WHERE "facilities"."id" = ? LIMIT ?[0m  [["id", 156], ["LIMIT", 1]]
+  Rendering facilities/show.html.erb within layouts/application
+  Rendered facilities/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 362ms (Views: 336.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/facilities/156/facility_items" for 127.0.0.1 at 2017-11-09 11:06:14 +0100
+Processing by FacilityItemsController#index as HTML
+  Parameters: {"facility_id"=>"156"}
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" WHERE "facilities"."id" = ? LIMIT ?[0m  [["id", 156], ["LIMIT", 1]]
+Unpermitted parameter: :facility_id
+  Rendering facility_items/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 156]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facility_items" WHERE "facility_items"."facility_id" = ? ORDER BY "facility_items"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["facility_id", 156], ["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacilityItem Load (1.0ms)[0m  [1m[34mSELECT  "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ? ORDER BY "facility_items"."name" ASC LIMIT ? OFFSET ?[0m  [["facility_id", 156], ["LIMIT", 25], ["OFFSET", 0]]
+  Rendered facility_items/index.html.erb within layouts/application (74.1ms)
+Completed 200 OK in 375ms (Views: 344.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/facilities" for 127.0.0.1 at 2017-11-09 11:06:17 +0100
+Processing by FacilitiesController#index as HTML
+  Rendering facilities/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (1.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered facilities/index.html.erb within layouts/application (75.1ms)
+Completed 200 OK in 409ms (Views: 384.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/templates" for 127.0.0.1 at 2017-11-09 11:07:28 +0100
+Processing by TemplatesController#index as HTML
+  Rendering templates/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "templates"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "templates" ORDER BY "templates"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mTemplate Load (1.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" ORDER BY "templates"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered templates/index.html.erb within layouts/application (69.1ms)
+Completed 200 OK in 348ms (Views: 327.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/templates/1" for 127.0.0.1 at 2017-11-09 11:07:30 +0100
+Processing by TemplatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTemplate Load (1.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" WHERE "templates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering templates/show.html.erb within layouts/application
+  Rendered templates/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 271ms (Views: 252.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/templates/1/facility_items" for 127.0.0.1 at 2017-11-09 11:07:34 +0100
+Processing by FacilityItemsController#index as HTML
+  Parameters: {"template_id"=>"1"}
+Unpermitted parameter: :template_id
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" WHERE "templates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: :template_id
+  Rendering facility_items/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facility_items" WHERE "facility_items"."template_id" = ?[0m  [["template_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facility_items" WHERE "facility_items"."template_id" = ? ORDER BY "facility_items"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["template_id", 1], ["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacilityItem Load (1.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."template_id" = ?[0m  [["template_id", 1]]
+  Rendered facility_items/index.html.erb within layouts/application (70.1ms)
+Completed 200 OK in 359ms (Views: 332.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/templates/1/addFacilityItems" for 127.0.0.1 at 2017-11-09 11:07:46 +0100
+Processing by FacilityItemsController#add as HTML
+  Parameters: {"template_id"=>"1"}
+  Rendering facility_items/add.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (1.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 151]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 153]]
+  [1m[36mFacilityItem Load (1.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 156]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 147]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 152]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 149]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 155]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 150]]
+  [1m[36mFacilityItem Load (1.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 154]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 148]]
+  Rendered facility_items/add.html.erb within layouts/application (105.1ms)
+Completed 200 OK in 374ms (Views: 352.4ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/templates/1/addFacilityItems" for 127.0.0.1 at 2017-11-09 11:07:50 +0100
+Processing by TemplatesController#addFacilityItems as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CGVJYGR+Tk61pYCklNB20ftUzu2/NnSpH8f6Si4JpgT4nwirZLzxhXF+MDB92SKbqrLhEv32TkCA267piKkvjA==", "items"=>["158"], "commit"=>"Add", "template_id"=>"1"}
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+  [1m[36mTemplate Load (1.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" WHERE "templates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFacilityItem Load (1.0ms)[0m  [1m[34mSELECT  "facility_items".* FROM "facility_items" WHERE "facility_items"."id" = ? LIMIT ?[0m  [["id", 158], ["LIMIT", 1]]
+  [1m[36mCACHE FacilityItem Load (0.0ms)[0m  [1m[34mSELECT  "facility_items".* FROM "facility_items" WHERE "facility_items"."id" = ? LIMIT ?[0m  [["id", 158], ["LIMIT", 1]]
+  [1m[36mFacility Load (1.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" WHERE "facilities"."id" = ? LIMIT ?[0m  [["id", 151], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[32mINSERT INTO "facility_items" ("name", "facility_id", "created_at", "updated_at", "template_id") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Christiansen Light"], ["facility_id", 151], ["created_at", "2017-11-09 10:07:51.084220"], ["updated_at", "2017-11-09 10:07:51.084220"], ["template_id", 1]]
+  [1m[35m (243.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/templates/1/facility_items
+Completed 302 Found in 289ms (ActiveRecord: 249.7ms)
+
+
+Started GET "/templates/1/facility_items" for 127.0.0.1 at 2017-11-09 11:07:51 +0100
+Processing by FacilityItemsController#index as HTML
+  Parameters: {"template_id"=>"1"}
+Unpermitted parameter: :template_id
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" WHERE "templates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: :template_id
+  Rendering facility_items/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facility_items" WHERE "facility_items"."template_id" = ?[0m  [["template_id", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facility_items" WHERE "facility_items"."template_id" = ? ORDER BY "facility_items"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["template_id", 1], ["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacilityItem Load (1.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."template_id" = ?[0m  [["template_id", 1]]
+  Rendered facility_items/index.html.erb within layouts/application (64.1ms)
+Completed 200 OK in 368ms (Views: 343.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/facilities" for 127.0.0.1 at 2017-11-09 11:07:56 +0100
+Processing by FacilitiesController#index as HTML
+  Rendering facilities/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (1.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered facilities/index.html.erb within layouts/application (53.1ms)
+Completed 200 OK in 289ms (Views: 273.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/facilities/151" for 127.0.0.1 at 2017-11-09 11:07:58 +0100
+Processing by FacilitiesController#show as HTML
+  Parameters: {"id"=>"151"}
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" WHERE "facilities"."id" = ? LIMIT ?[0m  [["id", 151], ["LIMIT", 1]]
+  Rendering facilities/show.html.erb within layouts/application
+  Rendered facilities/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 263ms (Views: 243.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/facilities/151/facility_items" for 127.0.0.1 at 2017-11-09 11:07:59 +0100
+Processing by FacilityItemsController#index as HTML
+  Parameters: {"facility_id"=>"151"}
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" WHERE "facilities"."id" = ? LIMIT ?[0m  [["id", 151], ["LIMIT", 1]]
+Unpermitted parameter: :facility_id
+  Rendering facility_items/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 151]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facility_items" WHERE "facility_items"."facility_id" = ? ORDER BY "facility_items"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["facility_id", 151], ["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT  "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ? ORDER BY "facility_items"."name" ASC LIMIT ? OFFSET ?[0m  [["facility_id", 151], ["LIMIT", 25], ["OFFSET", 0]]
+  Rendered facility_items/index.html.erb within layouts/application (60.1ms)
+Completed 200 OK in 353ms (Views: 328.0ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/facilities/151/facility_items/158" for 127.0.0.1 at 2017-11-09 11:08:03 +0100
+Processing by FacilityItemsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JLByDwVmmERcHeh9mck3Qzo0TB4tbPYtHW0dgpFgqhOqlXCGUUZ+ZalszCAvBVOK6ea9ejYLnCsv+yX7CpLsXA==", "facility_id"=>"151", "id"=>"158"}
+  [1m[36mFacilityItem Load (1.0ms)[0m  [1m[34mSELECT  "facility_items".* FROM "facility_items" WHERE "facility_items"."id" = ? LIMIT ?[0m  [["id", 158], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (35.0ms)[0m  [1m[31mDELETE FROM "facility_items" WHERE "facility_items"."id" = ?[0m  [["id", 158]]
+  [1m[35m (141.2ms)[0m  [1m[36mcommit transaction[0m
+Unpermitted parameters: :_method, :authenticity_token, :id
+Redirected to http://localhost:3000/facilities/151/facility_items?facility_id=151
+Completed 302 Found in 186ms (ActiveRecord: 177.2ms)
+
+
+Started GET "/facilities/151/facility_items?facility_id=151" for 127.0.0.1 at 2017-11-09 11:08:03 +0100
+Processing by FacilityItemsController#index as HTML
+  Parameters: {"facility_id"=>"151"}
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" WHERE "facilities"."id" = ? LIMIT ?[0m  [["id", 151], ["LIMIT", 1]]
+Unpermitted parameter: :facility_id
+  Rendering facility_items/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 151]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facility_items" WHERE "facility_items"."facility_id" = ? ORDER BY "facility_items"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["facility_id", 151], ["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT  "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ? ORDER BY "facility_items"."name" ASC LIMIT ? OFFSET ?[0m  [["facility_id", 151], ["LIMIT", 25], ["OFFSET", 0]]
+  Rendered facility_items/index.html.erb within layouts/application (63.1ms)
+Completed 200 OK in 324ms (Views: 304.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/facilities" for 127.0.0.1 at 2017-11-09 11:08:04 +0100
+Processing by FacilitiesController#index as HTML
+  Rendering facilities/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered facilities/index.html.erb within layouts/application (65.1ms)
+Completed 200 OK in 317ms (Views: 299.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/templates" for 127.0.0.1 at 2017-11-09 11:08:30 +0100
+Processing by TemplatesController#index as HTML
+  Rendering templates/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "templates"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "templates" ORDER BY "templates"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mTemplate Load (1.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" ORDER BY "templates"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered templates/index.html.erb within layouts/application (78.1ms)
+Completed 200 OK in 400ms (Views: 367.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/templates/1" for 127.0.0.1 at 2017-11-09 11:08:33 +0100
+Processing by TemplatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" WHERE "templates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering templates/show.html.erb within layouts/application
+  Rendered templates/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 317ms (Views: 293.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/templates/1/facility_items" for 127.0.0.1 at 2017-11-09 11:08:34 +0100
+  
+SyntaxError (C:/Sites/planning_admin/app/controllers/facility_items_controller.rb:101: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/facility_items_controller.rb:101: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/templates/1/facility_items" for 127.0.0.1 at 2017-11-09 11:08:49 +0100
+Processing by FacilityItemsController#index as HTML
+  Parameters: {"template_id"=>"1"}
+Unpermitted parameter: :template_id
+  [1m[36mTemplate Load (1.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" WHERE "templates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: :template_id
+  Rendering facility_items/index.html.erb within layouts/application
+  Rendered facility_items/index.html.erb within layouts/application (22.0ms)
+Completed 500 Internal Server Error in 220ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `total_pages' for nil:NilClass):
+    38: 
+    39: <% if @template %>
+    40: <h1><%= @template.name %> - Facility Items</h1>
+    41: <%= paginate @facility_items, theme: 'twitter-bootstrap-4' %>
+    42: <%= page_entries_info @facility_items %>
+    43: <table class="table table-dark table-striped table-bordered table-hover">
+    44:   <thead>
+  
+app/views/facility_items/index.html.erb:41:in `_app_views_facility_items_index_html_erb___35682970_103034964'
+Started GET "/templates/1/facility_items" for 127.0.0.1 at 2017-11-09 11:09:19 +0100
+Processing by FacilityItemsController#index as HTML
+  Parameters: {"template_id"=>"1"}
+Unpermitted parameter: :template_id
+  [1m[36mTemplate Load (1.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" WHERE "templates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: :template_id
+  Rendering facility_items/index.html.erb within layouts/application
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT  "facility_items".* FROM "facility_items" WHERE "facility_items"."template_id" = ? LIMIT ?[0m  [["template_id", 1], ["LIMIT", 11]]
+  Rendered facility_items/index.html.erb within layouts/application (71.5ms)
+Completed 500 Internal Server Error in 294ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `total_pages' for #<FacilityItem::ActiveRecord_Associations_CollectionProxy:0xc11c0b8>):
+    38: 
+    39: <% if @template %>
+    40: <h1><%= @template.name %> - Facility Items</h1>
+    41: <%= paginate @template.facility_items, theme: 'twitter-bootstrap-4' %>
+    42: <%= page_entries_info @template.facility_items %>
+    43: <table class="table table-dark table-striped table-bordered table-hover">
+    44:   <thead>
+  
+app/views/facility_items/index.html.erb:41:in `_app_views_facility_items_index_html_erb___35682970_101458284'
+Started GET "/templates/1/facility_items" for 127.0.0.1 at 2017-11-09 11:09:56 +0100
+Processing by FacilityItemsController#index as HTML
+  Parameters: {"template_id"=>"1"}
+Unpermitted parameter: :template_id
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" WHERE "templates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: :template_id
+  Rendering facility_items/index.html.erb within layouts/application
+  [1m[36mFacilityItem Load (1.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."template_id" = ?[0m  [["template_id", 1]]
+  Rendered facility_items/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 285ms (Views: 263.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/templates/1/facility_items" for 127.0.0.1 at 2017-11-09 11:11:42 +0100
+Processing by FacilityItemsController#index as HTML
+  Parameters: {"template_id"=>"1"}
+Unpermitted parameter: :template_id
+  [1m[36mTemplate Load (1.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" WHERE "templates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: :template_id
+  Rendering facility_items/index.html.erb within layouts/application
+  [1m[36mFacilityItem Load (1.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."template_id" = ?[0m  [["template_id", 1]]
+  Rendered facility_items/index.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 316ms (Views: 275.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/templates/1/addFacilityItems" for 127.0.0.1 at 2017-11-09 11:11:44 +0100
+Processing by FacilityItemsController#add as HTML
+  Parameters: {"template_id"=>"1"}
+  Rendering facility_items/add.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacilityItem Load (1.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 151]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 153]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 156]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 147]]
+  [1m[36mFacilityItem Load (1.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 152]]
+  [1m[36mFacilityItem Load (1.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 149]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 155]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 150]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 154]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 148]]
+  Rendered facility_items/add.html.erb within layouts/application (98.3ms)
+Completed 200 OK in 329ms (Views: 299.4ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/templates/1/addFacilityItems" for 127.0.0.1 at 2017-11-09 11:11:54 +0100
+Processing by TemplatesController#addFacilityItems as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GmXMvRbU0J7YtQYrlvgs5+fixlphCpIvvNdB+zi7XSvqn412FhZvVRxutr9/8XittgTppSPKqMYjyxVYnhvUow==", "items"=>["159"], "commit"=>"Add", "template_id"=>"1"}
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" WHERE "templates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFacilityItem Load (1.0ms)[0m  [1m[34mSELECT  "facility_items".* FROM "facility_items" WHERE "facility_items"."id" = ? LIMIT ?[0m  [["id", 159], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 18ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Facility items is invalid):
+  
+app/controllers/templates_controller.rb:33:in `block in addFacilityItems'
+app/controllers/templates_controller.rb:32:in `addFacilityItems'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to TemplateFacilityItem (20171109101935)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171109101935"]]
+  [1m[35m (22.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to TemplateFacilityItem (20171109101935)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20171109101935"]]
+  [1m[35m (21.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTemplateFacilityItems (20171109102140)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "template_facility_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "template_id" integer, "facility_item_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171109102140"]]
+  [1m[35m (21.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

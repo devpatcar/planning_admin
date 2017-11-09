@@ -24,9 +24,10 @@ class TemplatesController < ApplicationController
   def addFacilityItems
     facility_items = items_params[:items]
     template = Template.find(items_params[:template_id])
+    template.template_facility_item.delete_all
     if facility_items
       for value in facility_items do
-        template.facility_items.build(:name => FacilityItem.find(value).name, :facility => FacilityItem.find(value).facility)
+        template.template_facility_item.build(:facility_item_id => value,:template_id => template.id)
       end  
     end    
     respond_to do |format|
