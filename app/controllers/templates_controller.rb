@@ -22,11 +22,21 @@ class TemplatesController < ApplicationController
   end
 
   def addFacilityItems
-    facility_items = items_params[:facility_items].split
+    facility_items = items_params[:items]
+    template = Template.find(items_params[:template_id])
+    if facility_items
+      for value in facility_items do
+        template.facility_items.build(:name => FacilityItem.find(value).name, :facility => FacilityItem.find(value).facility)
+      end  
+    end    
     respond_to do |format|
-    puts facility_items.count
-    format.html { redirect_to template_facility_items_path(), notice: 'Facility Items was successfully added.' }
-    format.json { render :show, status: :created, location: @template }
+      if template.save!            
+        format.html { redirect_to template_facility_items_path(), notice: 'Facility Items was successfully added.' }
+        format.json { render :show, status: :created, location: template }
+      else
+        format.html { redirect_to template_facility_items_path(), notice: 'Facility Items was not successfully added.' }
+        format.json { render json: template.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -85,6 +95,6 @@ class TemplatesController < ApplicationController
     end
 
     def items_params
-      params.permit(:template_id, :facility_items)
+      params.permit(:template_id, items: [])
     end
 end
