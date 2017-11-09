@@ -1,17 +1,23 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+<div id="notice" class="alert alert-primary" role="alert">
+  <%= notice %>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>  
+<% end %>
 
-<p>
-  <strong>Name:</strong>
+<h1>Template</h1>
+
+<div class="row">
+<div class="col-md-6">
+<strong>Name:</strong>
   <%= @template.name %>
-  <% @template.schedulings.each do |item| %>
-  <strong>Schedulings:</strong>
-  <%= link_to  item.name, item %>
-  <% end %>
-  <% @template.questions.each do |item| %>
-  <strong>Questions:</strong>
-  <%= link_to  item.question, item %>
-  <% end %>
-</p>
+</div>
+<div class="col-md-6">
+  <%= link_to  "Show Facility Items", template_facility_items_path(@template), class: "btn btn-primary"  %>
+</div>
+</div>
 
-<%= link_to 'Edit', edit_template_path(@template) %> |
-<%= link_to 'Back', templates_path %>
+<%= link_to 'Back', templates_path, class: "btn btn-secondary" %>
+<%= link_to 'Edit', edit_template_path(@template), class: "btn btn-primary" %> 

@@ -1,5 +1,13 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+<div id="notice" class="alert alert-primary" role="alert">
+  <%= notice %>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>  
+<% end %>
 
+<% if @facility %>
 <h1><%= @facility.name %> - Facility Items</h1>
 <%= paginate @facility_items, theme: 'twitter-bootstrap-4' %>
 <%= page_entries_info @facility_items %>
@@ -26,3 +34,33 @@
 </table>
 
 <%= link_to 'Back', facility_path(@facility), class: 'btn btn-secondary' %>
+<% end %>
+
+<% if @template %>
+<h1><%= @template.name %> - Facility Items</h1>
+<%= paginate @facility_items, theme: 'twitter-bootstrap-4' %>
+<%= page_entries_info @facility_items %>
+<table class="table table-dark table-striped table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>        
+      <th class="float-right"><%= link_to 'Add Facility Item', template_addFacilityItems_path(), {class: "btn btn-success"} %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @facility_items.each do |facility_item| %>
+      <tr>
+        <td><%= facility_item.name %></td>    
+        <td class="float-right">
+          <%= link_to 'Show', template_facility_item_path(@template.id, facility_item.id), {class: "btn btn-primary"} %>
+          <%= link_to 'Edit', edit_template_facility_item_path(@template.id, facility_item.id), {class: "btn btn-secondary"} %>
+          <%= link_to 'Destroy', template_facility_item_path(@template.id, facility_item.id), class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Back', template_path(@template), class: 'btn btn-secondary' %>
+<% end %>

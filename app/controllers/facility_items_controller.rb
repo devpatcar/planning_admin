@@ -1,15 +1,24 @@
 class FacilityItemsController < ApplicationController
   before_action :set_facility_item, only: [:show, :edit, :update, :destroy] 
   before_action :set_facility, only: [:index,:show, :new, :edit]
+  before_action :set_template, only: [:index,:show, :new, :edit]
   # GET /facility_items
   # GET /facility_items.json
   def index
-    @facility_items = FacilityItem.where(facility_id: @facility.id).order(:name).page params[:page]   
+    if facility_params[:facility_id]
+      @facility_items = FacilityItem.where(facility_id: @facility.id).order(:name).page params[:page]
+    else
+      @facility_items = FacilityItem.where(template_id: @template.id).order(:name).page params[:page]
+    end
   end
 
   # GET /facility_items/1
   # GET /facility_items/1.json
   def show
+  end
+
+  def add
+    @facility = Facility.order(:name).page params[:page]
   end
 
   # GET /facility_items/new
@@ -28,7 +37,7 @@ class FacilityItemsController < ApplicationController
 
     respond_to do |format|
       if @facility_item.save
-        format.html { redirect_to facility_facility_items_path(@facility_item.facility_id), notice: 'Facility item was successfully created.' }
+        format.html { redirect_to '/facilities/'+@facility_item.facility_id.to_s+'/facility_items', notice: 'Facility item was successfully created.' }
         format.json { render :show, status: :created, location: @facility_item }
       else
         format.html { render :new }
@@ -64,7 +73,7 @@ class FacilityItemsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_facility_item
-      @facility_item = FacilityItem.find(params[:id])
+        @facility_item = FacilityItem.find(params[:id]) 
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
@@ -76,8 +85,20 @@ class FacilityItemsController < ApplicationController
       params.permit(:facility_id)
     end
 
+    def template_params
+      params.permit(:template_id)
+    end
+
     def set_facility
-      @facility = Facility.find(facility_params[:facility_id])
+      if facility_params[:facility_id]
+        @facility = Facility.find(facility_params[:facility_id])  
+      end      
+    end
+
+    def set_template
+      if template_params[:template_id]
+        @template = Template.find(template_params[:template_id]) 
+      end     
     end
 
 end

@@ -4,7 +4,7 @@ class TemplatesController < ApplicationController
   # GET /templates
   # GET /templates.json
   def index
-    @templates = Template.all
+    @templates = Template.order(:name).page params[:page]
   end
 
   # GET /templates/1
@@ -19,6 +19,15 @@ class TemplatesController < ApplicationController
 
   # GET /templates/1/edit
   def edit
+  end
+
+  def addFacilityItems
+    facility_items = items_params[:facility_items].split
+    respond_to do |format|
+    puts facility_items.count
+    format.html { redirect_to template_facility_items_path(), notice: 'Facility Items was successfully added.' }
+    format.json { render :show, status: :created, location: @template }
+    end
   end
 
   # POST /templates
@@ -73,5 +82,9 @@ class TemplatesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def template_params
       params.require(:template).permit(:name)
+    end
+
+    def items_params
+      params.permit(:template_id, :facility_items)
     end
 end

@@ -1,14 +1,19 @@
 Rails.application.routes.draw do
+  root 'admin#index'
+
   resources :users
   resources :results
   resources :protocols
-  resources :schedulings
-  resources :templates do
-    get 'facility_items', on: :member
-  end
   resources :questions
-  root 'admin#index'
+  resources :schedulings 
   resources :facility_items
+  resources :templates do
+    resources :facility_items
+    resources :questions
+    resources :schedulings
+    get '/addFacilityItems', to: 'facility_items#add'    
+    post "/addFacilityItems" => "templates#addFacilityItems"
+  end   
   resources :facilities do
     resources :facility_items
   end
