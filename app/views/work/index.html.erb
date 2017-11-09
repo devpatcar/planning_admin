@@ -1,0 +1,10 @@
+<h1>Facilities</h1>
+<%= paginate @facilities, theme: 'twitter-bootstrap-4' %>
+<%= page_entries_info @facilities %>
+
+<div class="list-group">
+    <% @facilities.each do |facility| %>      
+        <%= link_to facility.name, work_facility_path, class: "list-group-item list-group-item-action" %>                   
+    <% end %>  
+</div>
+

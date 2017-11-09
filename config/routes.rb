@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root 'admin#index'
-
+  get '/work', to: 'work#index'
+  get '/work/facility', to: 'work#facility'  
+  get '/work/measure', to: 'work#measure'  
+  get '/work/facility_items', to: 'work#facility_items'    
+  get '/work/protocol', to: 'work#protocol'
   resources :users
   resources :results
   resources :protocols
