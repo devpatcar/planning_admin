@@ -11,37 +11,32 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :question %>
-    <%= form.text_field :question, id: :question_question %>
+    <%= form.text_field :question, id: :question_question, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :description %>
-    <%= form.text_area :description, id: :question_description %>
+    <%= form.text_area :description, id: :question_description, class: "form-control" %>
   </div>
+  
+  <%= form.hidden_field :template_id, id: :question_template_id %>
 
-  <div class="field">
-    <%= form.label :template_id %>
-    <%= form.number_field :template_id, id: :question_template_id %>
-  </div>
-
-  <div class="field">
+  <div class="form-group">
     <%= form.label :required %>
     <%= form.check_box :required, id: :question_required %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :images %>
     <%= form.check_box :images, id: :question_images %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :comment %>
     <%= form.check_box :comment, id: :question_comment %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= form.submit 'Save' , :class => 'btn btn-success float-right'%>
 <% end %>

@@ -1,5 +1,13 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+<div id="notice" class="alert alert-primary" role="alert">
+  <%= notice %>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>  
+<% end %>
 
+<h1>Scheduling</h1>
 <p>
   <strong>Name:</strong>
   <%= @scheduling.name %>
@@ -70,5 +78,5 @@
   <%= @scheduling.notification %>
 </p>
 
-<%= link_to 'Edit', edit_scheduling_path(@scheduling) %> |
-<%= link_to 'Back', schedulings_path %>
+<%= link_to 'Back', template_schedulings_path, class: "btn btn-secondary" %>
+<%= link_to 'Edit', edit_template_scheduling_path(@template), class: "btn btn-primary" %>

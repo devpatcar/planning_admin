@@ -1,4 +1,13 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+<div id="notice" class="alert alert-primary" role="alert">
+  <%= notice %>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>  
+<% end %>
+
+<h1>Question</h1>
 
 <p>
   <strong>Question:</strong>
@@ -8,11 +17,6 @@
 <p>
   <strong>Description:</strong>
   <%= @question.description %>
-</p>
-
-<p>
-  <strong>Template:</strong>
-  <%= @question.template_id %>
 </p>
 
 <p>
@@ -30,5 +34,5 @@
   <%= @question.comment %>
 </p>
 
-<%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Back', questions_path %>
+<%= link_to 'Back', template_questions_path, class: "btn btn-secondary" %>
+<%= link_to 'Edit', edit_template_question_path(@template), class: "btn btn-primary" %>

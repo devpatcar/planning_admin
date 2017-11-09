@@ -1,17 +1,24 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <div id="notice" class="alert alert-primary" role="alert">
+    <%= notice %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>  
+<% end %>
 
 <h1>Questions</h1>
-
-<table>
+<%= paginate @questions, theme: 'twitter-bootstrap-4' %>
+<%= page_entries_info @questions %>
+<table class="table table-dark table-striped table-bordered table-hover">
   <thead>
     <tr>
       <th>Question</th>
-      <th>Description</th>
-      <th>Template</th>
+      <th>Description</th>     
       <th>Required</th>
       <th>Images</th>
       <th>Comment</th>
-      <th colspan="3"></th>
+      <th class="float-right"><%= link_to 'New Question', new_template_question_path(@template), {class: "btn btn-success"} %></th>
     </tr>
   </thead>
 
@@ -19,19 +26,16 @@
     <% @questions.each do |question| %>
       <tr>
         <td><%= question.question %></td>
-        <td><%= question.description %></td>
-        <td><%= question.template_id %></td>
+        <td><%= question.description %></td>        
         <td><%= question.required %></td>
         <td><%= question.images %></td>
         <td><%= question.comment %></td>
-        <td><%= link_to 'Show', question %></td>
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>
-        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="float-right">
+            <%= link_to 'Show', template_question_path(@template.id, question.id), {class: "btn btn-primary"} %>
+          <%= link_to 'Edit', edit_template_question_path(@template.id, question.id), {class: "btn btn-secondary"} %>
+          <%= link_to 'Destroy', template_question_path(@template.id, question.id), class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Question', new_question_path %>

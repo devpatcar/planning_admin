@@ -11,77 +11,72 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :scheduling_name %>
+    <%= form.text_field :name, id: :scheduling_name, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :template_id %>
-    <%= form.number_field :template_id, id: :scheduling_template_id %>
-  </div>
+  <%= form.hidden_field :template_id, id: :question_template_id %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :start_date %>
-    <%= form.date_select :start_date, id: :scheduling_start_date %>
+    <%= form.date_select :start_date, id: :scheduling_start_date, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :end_date %>
-    <%= form.date_select :end_date, id: :scheduling_end_date %>
+    <%= form.date_select :end_date, id: :scheduling_end_date, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :monday %>
     <%= form.check_box :monday, id: :scheduling_monday %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :thuesday %>
     <%= form.check_box :thuesday, id: :scheduling_thuesday %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :wendsday %>
     <%= form.check_box :wendsday, id: :scheduling_wendsday %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :thursday %>
     <%= form.check_box :thursday, id: :scheduling_thursday %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :friday %>
     <%= form.check_box :friday, id: :scheduling_friday %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :saturday %>
     <%= form.check_box :saturday, id: :scheduling_saturday %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :sunday %>
     <%= form.check_box :sunday, id: :scheduling_sunday %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :week_duration %>
-    <%= form.number_field :week_duration, id: :scheduling_week_duration %>
+    <%= form.number_field :week_duration, id: :scheduling_week_duration, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :delay %>
-    <%= form.number_field :delay, id: :scheduling_delay %>
+    <%= form.number_field :delay, id: :scheduling_delay, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :notification %>
-    <%= form.text_area :notification, id: :scheduling_notification %>
+    <%= form.text_area :notification, id: :scheduling_notification, class: "form-control" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= form.submit 'Save' , :class => 'btn btn-success float-right'%>
 <% end %>

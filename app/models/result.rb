@@ -1,3 +1,4 @@
 class Result < ApplicationRecord
-    belongs_to :protocol
+    belongs_to :user
+    belongs_to :answer
 end
