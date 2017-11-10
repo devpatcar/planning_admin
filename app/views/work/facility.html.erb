@@ -1,1 +1,8 @@
-<h1>Facility</h1>
+<%= link_to 'Back', '/work', class: 'btn btn-secondary' %>
+<h1><%= @facility.name %></h1>
+
+<div class="list-group">
+    <% @templates.each do |template| %>      
+        <%= link_to template.name, '/work/measure/'+template.id.to_s, class: "list-group-item list-group-item-action" %>                   
+    <% end %>  
+</div>

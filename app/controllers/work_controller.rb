@@ -1,22 +1,34 @@
 class WorkController < ApplicationController
-    def index
-        @facilities = Facility.where().order(:name).page params[:page]        
-        @templates = Template.joins(:schedulings).where("start_date <?", DateTime.now)        
+    before_action :set_facility, only: [:facility]
+    before_action :set_template, only: [:measure]
+    def index 
+        @work = Template.joins(:schedulings, :facility).select("facilities.name as f_name, facilities.id, templates.name").distinct.where("start_date <?", DateTime.now)   
     end
 
     def facility
-        @templates = Template.joins(:schedulings).where("start_date <?", DateTime.now)
+        @templates = Template.joins(:schedulings).where("start_date <?", DateTime.now)        
     end
 
     def measure
-        @facility_items = Template.joins(:schedulings).where("start_date <?", DateTime.now)
+        
     end
 
     def facility_items
-        @protocols = Template.joins(:schedulings).where("start_date <?", DateTime.now)
+        
     end
 
     def protocol
-        @protocol = Template.joins(:schedulings).where("start_date <?", DateTime.now)
-    end    
+       
+    end
+    
+    private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_facility
+      @facility = Facility.find(params[:facility_id])
+    end
+
+    def set_template
+        @template = Template.find(params[:template_id])
+      end
+
 end

@@ -30671,3 +30671,1257 @@ ActionView::Template::Error (No route matches {:action=>"show", :controller=>"fa
   
 app/views/work/index.html.erb:7:in `block in _app_views_work_index_html_erb__939567082_125729628'
 app/views/work/index.html.erb:6:in `_app_views_work_index_html_erb__939567082_125729628'
+Started GET "/work" for 127.0.0.1 at 2017-11-09 17:17:26 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (1.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (49.0ms)
+Completed 200 OK in 253ms (Views: 239.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/work/facility" for 127.0.0.1 at 2017-11-09 17:17:29 +0100
+Processing by WorkController#facility as HTML
+  Rendering work/facility.html.erb within layouts/application
+  Rendered work/facility.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 199ms (Views: 177.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-09 17:17:54 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  Rendered work/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 110ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (C:/Sites/planning_admin/app/views/work/index.html.erb:6: syntax error, unexpected tREGEXP_BEG, expecting '|'
+'.freeze;     @facilities.each do |/work| 
+                                    ^
+C:/Sites/planning_admin/app/views/work/index.html.erb:9: unknown regexp options - dv
+C:/Sites/planning_admin/app/views/work/index.html.erb:11: unterminated string meets end of file
+C:/Sites/planning_admin/app/views/work/index.html.erb:11: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/work/index.html.erb:6: syntax error, unexpected tREGEXP_BEG, expecting '|'
+app/views/work/index.html.erb:9: unknown regexp options - dv
+app/views/work/index.html.erb:11: unterminated string meets end of file
+app/views/work/index.html.erb:11: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/work" for 127.0.0.1 at 2017-11-09 17:18:11 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (1.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (45.1ms)
+Completed 200 OK in 268ms (Views: 249.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/work/facility.151" for 127.0.0.1 at 2017-11-09 17:18:27 +0100
+Processing by WorkController#facility as 
+  Rendering work/facility.html.erb within layouts/application
+  Rendered work/facility.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 455ms (Views: 313.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-09 17:19:47 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (347.9ms)
+Completed 500 Internal Server Error in 451ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `work_facility_path' for #<#<Class:0xebc7ce8>:0xebc6ae8>
+Did you mean?  work_facility_items_path
+               new_facility_path):
+    4: 
+    5: <div class="list-group">
+    6:     <% @facilities.each do |facility| %>
+    7:         <%= link_to facility.name, work_facility_path(facility.id), class: "list-group-item list-group-item-action" %>
+    8:     <% end %>  
+    9: </div>
+   10: 
+  
+app/views/work/index.html.erb:7:in `block in _app_views_work_index_html_erb__939567082_116703528'
+app/views/work/index.html.erb:6:in `_app_views_work_index_html_erb__939567082_116703528'
+Started GET "/work" for 127.0.0.1 at 2017-11-09 17:20:08 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (1.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (385.4ms)
+Completed 500 Internal Server Error in 483ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `work_facility_path' for #<#<Class:0xebc7ce8>:0x116363a0>
+Did you mean?  work_facility_items_path
+               new_facility_path):
+    4: 
+    5: <div class="list-group">
+    6:     <% @facilities.each do |facility| %>
+    7:         <%= link_to facility.name, work_facility_path(facility.id), class: "list-group-item list-group-item-action" %>
+    8:     <% end %>  
+    9: </div>
+   10: 
+  
+app/views/work/index.html.erb:7:in `block in _app_views_work_index_html_erb__939567082_145863972'
+app/views/work/index.html.erb:6:in `_app_views_work_index_html_erb__939567082_145863972'
+Started GET "/work" for 127.0.0.1 at 2017-11-09 17:20:26 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (52.1ms)
+Completed 200 OK in 275ms (Views: 259.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-09 17:20:50 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (322.5ms)
+Completed 500 Internal Server Error in 414ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `work_facility_path' for #<#<Class:0xebc7ce8>:0xdfa1e40>
+Did you mean?  work_facility_items_path
+               new_facility_path):
+    4: 
+    5: <div class="list-group">
+    6:     <% @facilities.each do |facility| %>
+    7:         <%= link_to facility.name, work_facility_path(facility.id), class: "list-group-item list-group-item-action" %>
+    8:     <% end %>  
+    9: </div>
+   10: 
+  
+app/views/work/index.html.erb:7:in `block in _app_views_work_index_html_erb__939567082_117248556'
+app/views/work/index.html.erb:6:in `_app_views_work_index_html_erb__939567082_117248556'
+Started GET "/work" for 127.0.0.1 at 2017-11-09 17:21:01 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (1.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (536.6ms)
+Completed 500 Internal Server Error in 647ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `work_facility_path' for #<#<Class:0xebc7ce8>:0xc8eaf40>
+Did you mean?  work_facility_items_path
+               new_facility_path):
+    4: 
+    5: <div class="list-group">
+    6:     <% @facilities.each do |facility| %>
+    7:         <%= link_to facility.name, work_facility_path, class: "list-group-item list-group-item-action" %>
+    8:     <% end %>  
+    9: </div>
+   10: 
+  
+app/views/work/index.html.erb:7:in `block in _app_views_work_index_html_erb__939567082_105339936'
+app/views/work/index.html.erb:6:in `_app_views_work_index_html_erb__939567082_105339936'
+Started GET "/work" for 127.0.0.1 at 2017-11-09 17:21:28 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (630.2ms)
+Completed 500 Internal Server Error in 722ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `work_facility' for #<#<Class:0xebc7ce8>:0xfad9da8>
+Did you mean?  work_facility_items_url):
+    4: 
+    5: <div class="list-group">
+    6:     <% @facilities.each do |facility| %>
+    7:         <%= link_to facility.name, work_facility, class: "list-group-item list-group-item-action" %>
+    8:     <% end %>  
+    9: </div>
+   10: 
+  
+app/views/work/index.html.erb:7:in `block in _app_views_work_index_html_erb__939567082_131519052'
+app/views/work/index.html.erb:6:in `_app_views_work_index_html_erb__939567082_131519052'
+Started GET "/work" for 127.0.0.1 at 2017-11-09 17:21:45 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (517.4ms)
+Completed 500 Internal Server Error in 616ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `work_facility' for #<#<Class:0x10c42920>:0x10c41720>
+Did you mean?  work_facility_url):
+    4: 
+    5: <div class="list-group">
+    6:     <% @facilities.each do |facility| %>
+    7:         <%= link_to facility.name, work_facility, class: "list-group-item list-group-item-action" %>
+    8:     <% end %>  
+    9: </div>
+   10: 
+  
+app/views/work/index.html.erb:7:in `block in _app_views_work_index_html_erb__939567082_140646192'
+app/views/work/index.html.erb:6:in `_app_views_work_index_html_erb__939567082_140646192'
+Started GET "/work" for 127.0.0.1 at 2017-11-09 17:21:54 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (1.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (43.0ms)
+Completed 200 OK in 244ms (Views: 228.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/work/facility" for 127.0.0.1 at 2017-11-09 18:54:17 +0100
+Processing by WorkController#facility as HTML
+  Rendering work/facility.html.erb within layouts/application
+  Rendered work/facility.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 361ms (Views: 324.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-09 18:54:21 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (43.1ms)
+Completed 200 OK in 236ms (Views: 221.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/work/facility" for 127.0.0.1 at 2017-11-09 18:54:46 +0100
+Processing by WorkController#facility as HTML
+  Rendering work/facility.html.erb within layouts/application
+  Rendered work/facility.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 198ms (Views: 182.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-09 18:59:06 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (50.9ms)
+Completed 200 OK in 253ms (Views: 235.1ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-09 18:59:12 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (45.5ms)
+Completed 200 OK in 250ms (Views: 235.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-09 18:59:26 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (1.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (45.7ms)
+Completed 200 OK in 252ms (Views: 235.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-09 18:59:48 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (1.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (48.1ms)
+Completed 200 OK in 294ms (Views: 276.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/templates" for 127.0.0.1 at 2017-11-09 18:59:59 +0100
+Processing by TemplatesController#index as HTML
+  Rendering templates/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "templates"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "templates" ORDER BY "templates"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" ORDER BY "templates"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered templates/index.html.erb within layouts/application (48.4ms)
+Completed 200 OK in 256ms (Views: 235.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:00:48 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 151]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 153]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 156]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 147]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 152]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 149]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 155]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 150]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 154]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 148]]
+  Rendered work/index.html.erb within layouts/application (84.1ms)
+Completed 200 OK in 279ms (Views: 264.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:01:09 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 151]]
+  Rendered work/index.html.erb within layouts/application (131.9ms)
+Completed 500 Internal Server Error in 247ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Template::ActiveRecord_Associations_CollectionProxy into String):
+    4: 
+    5: <div class="list-group">
+    6:     <% @facilities.each do |facility| %>
+    7:         <%= link_to facility.name + ": "+facility.facility_items[0].template+" measure", work_facility_path, class: "list-group-item list-group-item-action" %>
+    8:     <% end %>  
+    9: </div>
+   10: 
+  
+app/views/work/index.html.erb:7:in `+'
+app/views/work/index.html.erb:7:in `block in _app_views_work_index_html_erb__939567082_144838044'
+app/views/work/index.html.erb:6:in `_app_views_work_index_html_erb__939567082_144838044'
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:01:38 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (1.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 151]]
+  Rendered work/index.html.erb within layouts/application (82.3ms)
+Completed 500 Internal Server Error in 174ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `templatefacilityitems' for #<FacilityItem:0x10250790>
+Did you mean?  template_facility_item
+               template_facility_item=
+               template_facility_item_ids
+               template_facility_item_ids=):
+    4: 
+    5: <div class="list-group">
+    6:     <% @facilities.each do |facility| %>
+    7:         <%= link_to facility.name + ": "+facility.facility_items[0].templatefacilityitems+" measure", work_facility_path, class: "list-group-item list-group-item-action" %>
+    8:     <% end %>  
+    9: </div>
+   10: 
+  
+app/views/work/index.html.erb:7:in `block in _app_views_work_index_html_erb__939567082_135582660'
+app/views/work/index.html.erb:6:in `_app_views_work_index_html_erb__939567082_135582660'
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:01:51 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 151]]
+  Rendered work/index.html.erb within layouts/application (62.3ms)
+Completed 500 Internal Server Error in 158ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (no implicit conversion of TemplateFacilityItem::ActiveRecord_Associations_CollectionProxy into String):
+    4: 
+    5: <div class="list-group">
+    6:     <% @facilities.each do |facility| %>
+    7:         <%= link_to facility.name + ": "+facility.facility_items[0].template_facility_item+" measure", work_facility_path, class: "list-group-item list-group-item-action" %>
+    8:     <% end %>  
+    9: </div>
+   10: 
+  
+app/views/work/index.html.erb:7:in `+'
+app/views/work/index.html.erb:7:in `block in _app_views_work_index_html_erb__939567082_103017708'
+app/views/work/index.html.erb:6:in `_app_views_work_index_html_erb__939567082_103017708'
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:02:06 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacilityItem Load (1.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 151]]
+  Rendered work/index.html.erb within layouts/application (67.0ms)
+Completed 500 Internal Server Error in 178ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (no implicit conversion of TemplateFacilityItem::ActiveRecord_Associations_CollectionProxy into String):
+    4: 
+    5: <div class="list-group">
+    6:     <% @facilities.each do |facility| %>
+    7:         <%= link_to facility.name + ": "+facility.facility_items[0].template_facility_item+" measure", work_facility_path, class: "list-group-item list-group-item-action" %>
+    8:     <% end %>  
+    9: </div>
+   10: 
+  
+app/views/work/index.html.erb:7:in `+'
+app/views/work/index.html.erb:7:in `block in _app_views_work_index_html_erb__939567082_89057400'
+app/views/work/index.html.erb:6:in `_app_views_work_index_html_erb__939567082_89057400'
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:02:22 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 151]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "template_facility_items"."id" FROM "template_facility_items" WHERE "template_facility_items"."facility_item_id" = ?[0m  [["facility_item_id", 159]]
+  Rendered work/index.html.erb within layouts/application (67.2ms)
+Completed 500 Internal Server Error in 164ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Array into String):
+    4: 
+    5: <div class="list-group">
+    6:     <% @facilities.each do |facility| %>
+    7:         <%= link_to facility.name + ": "+facility.facility_items[0].template_facility_item.ids+" measure", work_facility_path, class: "list-group-item list-group-item-action" %>
+    8:     <% end %>  
+    9: </div>
+   10: 
+  
+app/views/work/index.html.erb:7:in `+'
+app/views/work/index.html.erb:7:in `block in _app_views_work_index_html_erb__939567082_59428704'
+app/views/work/index.html.erb:6:in `_app_views_work_index_html_erb__939567082_59428704'
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:02:38 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 151]]
+  [1m[36mTemplateFacilityItem Load (1.0ms)[0m  [1m[34mSELECT "template_facility_items".* FROM "template_facility_items" WHERE "template_facility_items"."facility_item_id" = ?[0m  [["facility_item_id", 159]]
+  Rendered work/index.html.erb within layouts/application (68.0ms)
+Completed 500 Internal Server Error in 163ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Fixnum into String):
+    4: 
+    5: <div class="list-group">
+    6:     <% @facilities.each do |facility| %>
+    7:         <%= link_to facility.name + ": "+facility.facility_items[0].template_facility_item[0].id+" measure", work_facility_path, class: "list-group-item list-group-item-action" %>
+    8:     <% end %>  
+    9: </div>
+   10: 
+  
+app/views/work/index.html.erb:7:in `+'
+app/views/work/index.html.erb:7:in `block in _app_views_work_index_html_erb__939567082_142373388'
+app/views/work/index.html.erb:6:in `_app_views_work_index_html_erb__939567082_142373388'
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:02:53 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 151]]
+  [1m[36mTemplateFacilityItem Load (1.0ms)[0m  [1m[34mSELECT "template_facility_items".* FROM "template_facility_items" WHERE "template_facility_items"."facility_item_id" = ?[0m  [["facility_item_id", 159]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 153]]
+  [1m[36mTemplateFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "template_facility_items".* FROM "template_facility_items" WHERE "template_facility_items"."facility_item_id" = ?[0m  [["facility_item_id", 164]]
+  Rendered work/index.html.erb within layouts/application (70.1ms)
+Completed 500 Internal Server Error in 165ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    4: 
+    5: <div class="list-group">
+    6:     <% @facilities.each do |facility| %>
+    7:         <%= link_to facility.name + ": "+facility.facility_items[0].template_facility_item[0].id.to_s+" measure", work_facility_path, class: "list-group-item list-group-item-action" %>
+    8:     <% end %>  
+    9: </div>
+   10: 
+  
+app/views/work/index.html.erb:7:in `block in _app_views_work_index_html_erb__939567082_141342648'
+app/views/work/index.html.erb:6:in `_app_views_work_index_html_erb__939567082_141342648'
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:03:10 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 151]]
+  [1m[36mTemplateFacilityItem Load (1.0ms)[0m  [1m[34mSELECT "template_facility_items".* FROM "template_facility_items" WHERE "template_facility_items"."facility_item_id" = ?[0m  [["facility_item_id", 159]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 153]]
+  [1m[36mTemplateFacilityItem Load (1.0ms)[0m  [1m[34mSELECT "template_facility_items".* FROM "template_facility_items" WHERE "template_facility_items"."facility_item_id" = ?[0m  [["facility_item_id", 164]]
+  Rendered work/index.html.erb within layouts/application (72.1ms)
+Completed 500 Internal Server Error in 169ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `template_id' for nil:NilClass):
+    4: 
+    5: <div class="list-group">
+    6:     <% @facilities.each do |facility| %>
+    7:         <%= link_to facility.name + ": "+facility.facility_items[0].template_facility_item[0].template_id.to_s+" measure", work_facility_path, class: "list-group-item list-group-item-action" %>
+    8:     <% end %>  
+    9: </div>
+   10: 
+  
+app/views/work/index.html.erb:7:in `block in _app_views_work_index_html_erb__939567082_129604896'
+app/views/work/index.html.erb:6:in `_app_views_work_index_html_erb__939567082_129604896'
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:03:21 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (1.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 151]]
+  [1m[36mTemplateFacilityItem Load (1.0ms)[0m  [1m[34mSELECT "template_facility_items".* FROM "template_facility_items" WHERE "template_facility_items"."facility_item_id" = ?[0m  [["facility_item_id", 159]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 153]]
+  [1m[36mTemplateFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "template_facility_items".* FROM "template_facility_items" WHERE "template_facility_items"."facility_item_id" = ?[0m  [["facility_item_id", 164]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 156]]
+  [1m[36mTemplateFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "template_facility_items".* FROM "template_facility_items" WHERE "template_facility_items"."facility_item_id" = ?[0m  [["facility_item_id", 173]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 147]]
+  [1m[36mTemplateFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "template_facility_items".* FROM "template_facility_items" WHERE "template_facility_items"."facility_item_id" = ?[0m  [["facility_item_id", 146]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 152]]
+  [1m[36mTemplateFacilityItem Load (1.0ms)[0m  [1m[34mSELECT "template_facility_items".* FROM "template_facility_items" WHERE "template_facility_items"."facility_item_id" = ?[0m  [["facility_item_id", 161]]
+  [1m[36mFacilityItem Load (1.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 149]]
+  [1m[36mTemplateFacilityItem Load (1.0ms)[0m  [1m[34mSELECT "template_facility_items".* FROM "template_facility_items" WHERE "template_facility_items"."facility_item_id" = ?[0m  [["facility_item_id", 152]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 155]]
+  [1m[36mTemplateFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "template_facility_items".* FROM "template_facility_items" WHERE "template_facility_items"."facility_item_id" = ?[0m  [["facility_item_id", 170]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 150]]
+  [1m[36mTemplateFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "template_facility_items".* FROM "template_facility_items" WHERE "template_facility_items"."facility_item_id" = ?[0m  [["facility_item_id", 155]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 154]]
+  [1m[36mTemplateFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "template_facility_items".* FROM "template_facility_items" WHERE "template_facility_items"."facility_item_id" = ?[0m  [["facility_item_id", 167]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 148]]
+  [1m[36mTemplateFacilityItem Load (1.0ms)[0m  [1m[34mSELECT "template_facility_items".* FROM "template_facility_items" WHERE "template_facility_items"."facility_item_id" = ?[0m  [["facility_item_id", 149]]
+  Rendered work/index.html.erb within layouts/application (95.3ms)
+Completed 200 OK in 309ms (Views: 288.5ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:06:50 +0100
+Processing by WorkController#index as HTML
+Completed 500 Internal Server Error in 8ms
+
+
+  
+NameError (uninitialized constant WorkController::Templates):
+  
+app/controllers/work_controller.rb:4:in `index'
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:07:03 +0100
+Processing by WorkController#index as HTML
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" LIMIT ?[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 31ms
+
+
+  
+  [1m[36mCACHE Template Load (0.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" LIMIT ?[0m  [["LIMIT", 11]]
+NoMethodError (undefined method `schedulings' for #<Template::ActiveRecord_Relation:0x11851b18>):
+  
+app/controllers/work_controller.rb:5:in `index'
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:07:17 +0100
+Processing by WorkController#index as HTML
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" LIMIT ?[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 28ms
+
+
+  
+  [1m[36mCACHE Template Load (0.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" LIMIT ?[0m  [["LIMIT", 11]]
+NoMethodError (undefined method `scheduling' for #<Template::ActiveRecord_Relation:0xc5e4928>):
+  
+app/controllers/work_controller.rb:5:in `index'
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:13:06 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (1.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (53.8ms)
+Completed 200 OK in 276ms (Views: 248.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:13:48 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (52.7ms)
+Completed 200 OK in 282ms (Views: 256.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:14:16 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" WHERE (start_date >'2017-11-09 18:14:17.224266')[0m
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (72.5ms)
+Completed 200 OK in 294ms (Views: 261.4ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:14:30 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" WHERE (start_date <'2017-11-09 18:14:30.621343')[0m
+  [1m[36mFacility Load (1.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (58.7ms)
+Completed 200 OK in 274ms (Views: 242.6ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:15:38 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" WHERE (start_date <'2017-11-09 18:15:38.304185')[0m
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (77.3ms)
+Completed 200 OK in 303ms (Views: 270.0ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:16:37 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mTemplate Load (1.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" WHERE (start_date <'2017-11-09 18:16:37.301167') LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered work/index.html.erb within layouts/application (75.9ms)
+Completed 500 Internal Server Error in 175ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `facility_items' for #<Template::ActiveRecord_Relation:0x1026b9b8>):
+    1: <h1>Facilities</h1>
+    2: <%= paginate @facilities, theme: 'twitter-bootstrap-4' %>
+    3: <%= page_entries_info @facilities %>
+    4: <%= @templates.facility_items %>
+    5: <div class="list-group">
+    6:     <% @facilities.each do |facility| %>
+    7:         <%= link_to facility.name, work_facility_path, class: "list-group-item list-group-item-action" %>
+  
+app/views/work/index.html.erb:4:in `_app_views_work_index_html_erb__939567082_135485124'
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:16:57 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" WHERE (start_date <'2017-11-09 18:16:57.072059') LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered work/index.html.erb within layouts/application (64.1ms)
+Completed 500 Internal Server Error in 158ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `facility_item' for #<Template::ActiveRecord_Relation:0x6bf75e8>):
+    1: <h1>Facilities</h1>
+    2: <%= paginate @facilities, theme: 'twitter-bootstrap-4' %>
+    3: <%= page_entries_info @facilities %>
+    4: <%= @templates.facility_item %>
+    5: <div class="list-group">
+    6:     <% @facilities.each do |facility| %>
+    7:         <%= link_to facility.name, work_facility_path, class: "list-group-item list-group-item-action" %>
+  
+app/views/work/index.html.erb:4:in `_app_views_work_index_html_erb__939567082_56602464'
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:17:11 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT  "templates".* FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" WHERE (start_date <'2017-11-09 18:17:11.365344') LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mFacility Load (1.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (48.1ms)
+Completed 200 OK in 254ms (Views: 238.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:18:08 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT "templates".* FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" WHERE (start_date <'2017-11-09 18:18:09.033102')[0m
+  [1m[36mFacility Load (1.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (48.9ms)
+Completed 200 OK in 252ms (Views: 236.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:18:24 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mTemplate Load (1.0ms)[0m  [1m[34mSELECT "templates".* FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" WHERE (start_date <'2017-11-09 18:18:24.490596')[0m
+  Rendered work/index.html.erb within layouts/application (106.1ms)
+Completed 500 Internal Server Error in 203ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `facility_items' for #<Template:0xfa83a98>
+Did you mean?  facility_item
+               facility_item=
+               facility_item_ids
+               facility_item_ids=):
+    1: <h1>Facilities</h1>
+    2: <%= paginate @facilities, theme: 'twitter-bootstrap-4' %>
+    3: <%= page_entries_info @facilities %>
+    4: <%= [@templates[0].facility_items] %>
+    5: <div class="list-group">
+    6:     <% @facilities.each do |facility| %>
+    7:         <%= link_to facility.name, work_facility_path, class: "list-group-item list-group-item-action" %>
+  
+app/views/work/index.html.erb:4:in `_app_views_work_index_html_erb__939567082_129049812'
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:18:41 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT "templates".* FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" WHERE (start_date <'2017-11-09 18:18:41.202745')[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "facility_items"."id" FROM "facility_items" INNER JOIN "template_facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" WHERE "template_facility_items"."template_id" = ?[0m  [["template_id", 1]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (54.1ms)
+Completed 200 OK in 256ms (Views: 241.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:22:36 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mTemplate Load (1.0ms)[0m  [1m[34mSELECT "templates".* FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" WHERE (start_date <'2017-11-09 18:22:37.047921')[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "facility_items"."id" FROM "facility_items" INNER JOIN "template_facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" WHERE "template_facility_items"."template_id" = ?[0m  [["template_id", 1]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacilityItem Load (1.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 151]]
+  Rendered work/index.html.erb within layouts/application (84.1ms)
+Completed 500 Internal Server Error in 180ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `template_facility_item' for nil:NilClass):
+     5: <div class="list-group">
+     6:     <% @facilities.each do |facility| %>
+     7:         <% facility.facility_items.each do |item| %>
+     8:             <% if @template.template_facility_item.exists?(item.template_facility_item) %>
+     9:               <%= link_to facility.name, work_facility_path, class: "list-group-item list-group-item-action" %>
+    10:             <% end %>
+    11:         <% end %>
+  
+app/views/work/index.html.erb:8:in `block (2 levels) in _app_views_work_index_html_erb__939567082_134989704'
+app/views/work/index.html.erb:7:in `block in _app_views_work_index_html_erb__939567082_134989704'
+app/views/work/index.html.erb:6:in `_app_views_work_index_html_erb__939567082_134989704'
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:24:08 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT "templates".* FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" WHERE (start_date <'2017-11-09 18:24:08.935541')[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "facility_items"."id" FROM "facility_items" INNER JOIN "template_facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" WHERE "template_facility_items"."template_id" = ?[0m  [["template_id", 1]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 151]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 153]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 156]]
+  [1m[36mFacilityItem Load (1.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 147]]
+  [1m[36mFacilityItem Load (1.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 152]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 149]]
+  [1m[36mFacilityItem Load (1.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 155]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 150]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 154]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 148]]
+  Rendered work/index.html.erb within layouts/application (117.4ms)
+Completed 200 OK in 344ms (Views: 309.5ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:24:46 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mTemplate Load (1.0ms)[0m  [1m[34mSELECT "templates".* FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" WHERE (start_date <'2017-11-09 18:24:46.282597')[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "facility_items"."id" FROM "facility_items" INNER JOIN "template_facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" WHERE "template_facility_items"."template_id" = ?[0m  [["template_id", 1]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (75.1ms)
+Completed 500 Internal Server Error in 169ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `facility_item_ids' for #<Template::ActiveRecord_Relation:0x101a1650>):
+    4: <%= [@templates[0].facility_item_ids] %>
+    5: <div class="list-group">
+    6:     <% @facilities.each do |facility| %>
+    7:         <% @templates.facility_item_ids.each do |item| %>
+    8:             
+    9:               <%= link_to facility.name, work_facility_path, class: "list-group-item list-group-item-action" %>
+   10:           
+  
+app/views/work/index.html.erb:7:in `block in _app_views_work_index_html_erb__939567082_135070380'
+app/views/work/index.html.erb:6:in `_app_views_work_index_html_erb__939567082_135070380'
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:25:06 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT "templates".* FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" WHERE (start_date <'2017-11-09 18:25:06.394330')[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "facility_items"."id" FROM "facility_items" INNER JOIN "template_facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" WHERE "template_facility_items"."template_id" = ?[0m  [["template_id", 1]]
+  [1m[36mFacility Load (1.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (49.2ms)
+Completed 200 OK in 263ms (Views: 245.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:25:57 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT "templates".* FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" WHERE (start_date <'2017-11-09 18:25:57.230969')[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "facility_items"."id" FROM "facility_items" INNER JOIN "template_facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" WHERE "template_facility_items"."template_id" = ?[0m  [["template_id", 1]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "facility_items"."id" FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 151]]
+  Rendered work/index.html.erb within layouts/application (72.3ms)
+Completed 500 Internal Server Error in 166ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `exists' for [159, 160, 191]:Array
+Did you mean?  exit
+               exit!):
+     5: <div class="list-group">
+     6:     <% @facilities.each do |facility| %>
+     7:         <% @templates.each do |item| %>
+     8:             <% if item.facility_item_ids.exists(facility.facility_item_ids) %>
+     9:               
+    10:             <% end %>
+    11:               <%= link_to facility.name, work_facility_path, class: "list-group-item list-group-item-action" %>
+  
+app/views/work/index.html.erb:8:in `block (2 levels) in _app_views_work_index_html_erb__939567082_105137808'
+app/views/work/index.html.erb:7:in `block in _app_views_work_index_html_erb__939567082_105137808'
+app/views/work/index.html.erb:6:in `_app_views_work_index_html_erb__939567082_105137808'
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:26:23 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT "templates".* FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" WHERE (start_date <'2017-11-09 18:26:23.835154')[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "facility_items"."id" FROM "facility_items" INNER JOIN "template_facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" WHERE "template_facility_items"."template_id" = ?[0m  [["template_id", 1]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "facility_items"."id" FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 151]]
+  Rendered work/index.html.erb within layouts/application (75.1ms)
+Completed 500 Internal Server Error in 176ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `exists?' for [159, 160, 191]:Array
+Did you mean?  exit):
+     5: <div class="list-group">
+     6:     <% @facilities.each do |facility| %>
+     7:         <% @templates.each do |item| %>
+     8:             <% if item.facility_item_ids.exists?(facility.facility_item_ids) %>
+     9:               
+    10:             <% end %>
+    11:               <%= link_to facility.name, work_facility_path, class: "list-group-item list-group-item-action" %>
+  
+app/views/work/index.html.erb:8:in `block (2 levels) in _app_views_work_index_html_erb__939567082_84151872'
+app/views/work/index.html.erb:7:in `block in _app_views_work_index_html_erb__939567082_84151872'
+app/views/work/index.html.erb:6:in `_app_views_work_index_html_erb__939567082_84151872'
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:26:45 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT "templates".* FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" WHERE (start_date <'2017-11-09 18:26:45.973764')[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "facility_items"."id" FROM "facility_items" INNER JOIN "template_facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" WHERE "template_facility_items"."template_id" = ?[0m  [["template_id", 1]]
+  [1m[36mFacility Load (1.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (77.0ms)
+Completed 500 Internal Server Error in 185ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `facility_item_id' for #<Template:0xfd7a0f0>
+Did you mean?  facility_item_ids
+               facility_item_ids=
+               facility_item
+               facility_item=):
+     5: <div class="list-group">
+     6:     <% @facilities.each do |facility| %>
+     7:         <% @templates.each do |item| %>
+     8:             <% if item.facility_item_id.exists?(facility.facility_item_ids) %>
+     9:               
+    10:             <% end %>
+    11:               <%= link_to facility.name, work_facility_path, class: "list-group-item list-group-item-action" %>
+  
+app/views/work/index.html.erb:8:in `block (2 levels) in _app_views_work_index_html_erb__939567082_123277128'
+app/views/work/index.html.erb:7:in `block in _app_views_work_index_html_erb__939567082_123277128'
+app/views/work/index.html.erb:6:in `_app_views_work_index_html_erb__939567082_123277128'
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:26:59 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mTemplate Load (1.0ms)[0m  [1m[34mSELECT "templates".* FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" WHERE (start_date <'2017-11-09 18:26:59.926719')[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "facility_items"."id" FROM "facility_items" INNER JOIN "template_facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" WHERE "template_facility_items"."template_id" = ?[0m  [["template_id", 1]]
+  [1m[36mFacility Load (1.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (76.1ms)
+Completed 500 Internal Server Error in 180ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `facility_item_id' for #<Template:0x112b6360>
+Did you mean?  facility_item_ids
+               facility_item_ids=
+               facility_item
+               facility_item=):
+     5: <div class="list-group">
+     6:     <% @facilities.each do |facility| %>
+     7:         <% @templates.each do |item| %>
+     8:             <% if item.facility_item_id.exists?(facility.facility_item_ids) %>
+     9:               
+    10:             <% end %>
+    11:               <%= link_to facility.name, work_facility_path, class: "list-group-item list-group-item-action" %>
+  
+app/views/work/index.html.erb:8:in `block (2 levels) in _app_views_work_index_html_erb__939567082_132963084'
+app/views/work/index.html.erb:7:in `block in _app_views_work_index_html_erb__939567082_132963084'
+app/views/work/index.html.erb:6:in `_app_views_work_index_html_erb__939567082_132963084'
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:27:35 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mTemplate Load (1.0ms)[0m  [1m[34mSELECT "templates".* FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" WHERE (start_date <'2017-11-09 18:27:35.141077')[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "facility_items"."id" FROM "facility_items" INNER JOIN "template_facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" WHERE "template_facility_items"."template_id" = ?[0m  [["template_id", 1]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (68.1ms)
+Completed 200 OK in 284ms (Views: 267.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:28:15 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mTemplate Load (1.0ms)[0m  [1m[34mSELECT "templates".* FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" WHERE (start_date <'2017-11-09 18:28:15.161424')[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "facility_items"."id" FROM "facility_items" INNER JOIN "template_facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" WHERE "template_facility_items"."template_id" = ?[0m  [["template_id", 1]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (56.0ms)
+Completed 200 OK in 303ms (Views: 287.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:29:18 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT "templates".* FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" WHERE (start_date <'2017-11-09 18:29:18.785571')[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "facility_items"."id" FROM "facility_items" INNER JOIN "template_facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" WHERE "template_facility_items"."template_id" = ?[0m  [["template_id", 1]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (72.1ms)
+Completed 500 Internal Server Error in 168ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<Template:0xeca8130>):
+     5: <div class="list-group">
+     6:     <% @facilities.each do |facility| %>
+     7:         <% @templates.each do |item| %>
+     8:             <% item.each do |i| %>
+     9:                 <%= i %>
+    10:             <% end %>
+    11:             
+  
+app/views/work/index.html.erb:8:in `block (2 levels) in _app_views_work_index_html_erb__939567082_123560508'
+app/views/work/index.html.erb:7:in `block in _app_views_work_index_html_erb__939567082_123560508'
+app/views/work/index.html.erb:6:in `_app_views_work_index_html_erb__939567082_123560508'
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:29:42 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT "templates".* FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" WHERE (start_date <'2017-11-09 18:29:42.237334')[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "facility_items"."id" FROM "facility_items" INNER JOIN "template_facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" WHERE "template_facility_items"."template_id" = ?[0m  [["template_id", 1]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (52.8ms)
+Completed 200 OK in 259ms (Views: 243.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:31:56 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (1.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mTemplate Load (1.0ms)[0m  [1m[34mSELECT "templates".* FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" WHERE (start_date <'2017-11-09 18:31:56.717674')[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "facility_items"."id" FROM "facility_items" INNER JOIN "template_facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" WHERE "template_facility_items"."template_id" = ?[0m  [["template_id", 1]]
+  Rendered work/index.html.erb within layouts/application (90.9ms)
+Completed 500 Internal Server Error in 184ms (ActiveRecord: 5.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `facility_item' for #<Facility:0xc8b2c90>
+Did you mean?  facility_items
+               facility_items=
+               facility_item_ids):
+     6:     <% @facilities.each do |facility| %>
+     7:         <% @templates.each do |item| %>
+     8:             <% item.facility_item_ids.each do |i| %>
+     9:                 <% facility.facility_item.each do |f| %>
+    10:                      <% if f.id == i %>
+    11:                         <%= link_to facility.name, work_facility_path, class: "list-group-item list-group-item-action" %>
+    12:                     <% end %>
+  
+app/views/work/index.html.erb:9:in `block (3 levels) in _app_views_work_index_html_erb__939567082_57151332'
+app/views/work/index.html.erb:8:in `each'
+app/views/work/index.html.erb:8:in `block (2 levels) in _app_views_work_index_html_erb__939567082_57151332'
+app/views/work/index.html.erb:7:in `block in _app_views_work_index_html_erb__939567082_57151332'
+app/views/work/index.html.erb:6:in `_app_views_work_index_html_erb__939567082_57151332'
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:32:08 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT "templates".* FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" WHERE (start_date <'2017-11-09 18:32:08.728668')[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "facility_items"."id" FROM "facility_items" INNER JOIN "template_facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" WHERE "template_facility_items"."template_id" = ?[0m  [["template_id", 1]]
+  [1m[36mFacilityItem Load (1.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 151]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 153]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 156]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 147]]
+  [1m[36mFacilityItem Load (1.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 152]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 149]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 155]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 150]]
+  [1m[36mFacilityItem Load (0.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 154]]
+  [1m[36mFacilityItem Load (1.0ms)[0m  [1m[34mSELECT "facility_items".* FROM "facility_items" WHERE "facility_items"."facility_id" = ?[0m  [["facility_id", 148]]
+  Rendered work/index.html.erb within layouts/application (73.2ms)
+Completed 200 OK in 327ms (Views: 307.7ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:33:18 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (46.8ms)
+Completed 200 OK in 257ms (Views: 240.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:35:31 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (49.1ms)
+Completed 200 OK in 268ms (Views: 238.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:36:45 +0100
+  
+SyntaxError (C:/Sites/planning_admin/app/controllers/work_controller.rb:4: syntax error, unexpected tIVAR, expecting ')'
+        @templates = Template.joins(:scheduling...
+                  ^):
+  
+app/controllers/work_controller.rb:4: syntax error, unexpected tIVAR, expecting ')'
+Started GET "/work" for 127.0.0.1 at 2017-11-09 19:37:03 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities" INNER JOIN "facility_items" ON "facility_items"."facility_id" = "facilities"."id"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" INNER JOIN "facility_items" ON "facility_items"."facility_id" = "facilities"."id" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (4.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" INNER JOIN "facility_items" ON "facility_items"."facility_id" = "facilities"."id" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (258.9ms)
+Completed 200 OK in 487ms (Views: 452.1ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-09 21:35:20 +0100
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdminController#index as HTML
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "protocols" WHERE "protocols"."completed" = ?[0m  [["completed", "t"]]
+  Rendering admin/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "schedulings" WHERE (start_date < '2017-11-09 20:35:21.489597') AND (end_date > '2017-11-09 20:35:21.491211')[0m
+  Rendered admin/index.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 2125ms (Views: 2050.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-09 21:35:46 +0100
+Processing by WorkController#index as HTML
+  [1m[36mFacility Load (1.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" LIMIT ?[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms)
+
+
+  
+  [1m[36mCACHE Facility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" LIMIT ?[0m  [["LIMIT", 11]]
+NoMethodError (undefined method `order' for #<ActiveRecord::QueryMethods::WhereChain:0x96af200>):
+  
+app/controllers/work_controller.rb:3:in `index'
+Started GET "/work" for 127.0.0.1 at 2017-11-09 21:36:04 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (1.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (1931.1ms)
+Completed 200 OK in 2243ms (Views: 2207.3ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-09 21:36:24 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (56.0ms)
+Completed 200 OK in 280ms (Views: 261.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/work/facility" for 127.0.0.1 at 2017-11-09 21:36:29 +0100
+Processing by WorkController#facility as HTML
+  Rendering work/facility.html.erb within layouts/application
+  Rendered work/facility.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 203ms (Views: 180.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/work/facility/130" for 127.0.0.1 at 2017-11-09 21:40:35 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/work/facility/130"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/work/130/facility" for 127.0.0.1 at 2017-11-09 21:41:02 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/work/130/facility"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/work" for 127.0.0.1 at 2017-11-09 21:43:26 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (284.5ms)
+Completed 500 Internal Server Error in 385ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `work_facility_path' for #<#<Class:0x56bdb50>:0x566f6b8>
+Did you mean?  work_facility_items_path
+               new_facility_path):
+    4: 
+    5: <div class="list-group">
+    6:     <% @facilities.each do |facility| %>      
+    7:         <%= link_to facility.name, work_facility_path(facility), class: "list-group-item list-group-item-action" %>                   
+    8:     <% end %>  
+    9: </div>
+   10: 
+  
+app/views/work/index.html.erb:7:in `block in _app_views_work_index_html_erb__741350472_45480648'
+app/views/work/index.html.erb:6:in `_app_views_work_index_html_erb__741350472_45480648'
+Started GET "/work" for 127.0.0.1 at 2017-11-09 21:43:31 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (1.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (263.6ms)
+Completed 500 Internal Server Error in 375ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `work_facility_path' for #<#<Class:0x56bdb50>:0x40bacf8>
+Did you mean?  work_facility_items_path
+               new_facility_path):
+    4: 
+    5: <div class="list-group">
+    6:     <% @facilities.each do |facility| %>      
+    7:         <%= link_to facility.name, work_facility_path(facility), class: "list-group-item list-group-item-action" %>                   
+    8:     <% end %>  
+    9: </div>
+   10: 
+  
+app/views/work/index.html.erb:7:in `block in _app_views_work_index_html_erb__741350472_33919008'
+app/views/work/index.html.erb:6:in `_app_views_work_index_html_erb__741350472_33919008'
+Started GET "/work" for 127.0.0.1 at 2017-11-09 21:44:53 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "facilities"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mFacility Load (0.0ms)[0m  [1m[34mSELECT  "facilities".* FROM "facilities" ORDER BY "facilities"."name" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered work/index.html.erb within layouts/application (346.6ms)
+Completed 500 Internal Server Error in 448ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `work_facility_path' for #<#<Class:0x2ef7d48>:0x2d9ce28>
+Did you mean?  work_facility_items_path
+               new_facility_path):
+    4: 
+    5: <div class="list-group">
+    6:     <% @facilities.each do |facility| %>      
+    7:         <%= link_to facility.name, work_facility_path(facility), class: "list-group-item list-group-item-action" %>                   
+    8:     <% end %>  
+    9: </div>
+   10: 
+  
+app/views/work/index.html.erb:7:in `block in _app_views_work_index_html_erb__741350472_24737280'
+app/views/work/index.html.erb:6:in `_app_views_work_index_html_erb__741350472_24737280'
