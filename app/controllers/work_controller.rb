@@ -10,7 +10,11 @@ class WorkController < ApplicationController
     def facility        
     end
 
-    def facility_item        
+    def facility_item 
+        @protocol = Protocol.new 
+        for value in @template.questions do
+            @protocol.results.build(question: value.question.to_s)
+        end              
     end
     
     private

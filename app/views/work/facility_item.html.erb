@@ -1,3 +1,16 @@
 <%= link_to 'Back', '/work', class: 'btn btn-secondary' %>
 <h1><%= @template.name+" - "+@facility.name+" - "+@facility_item.name %></h1>
 
+<%= form_for @protocol do |f| %>
+<% @protocol.results.each do |r| %>
+    
+    <div class="form-group">
+        <%= label_tag 'answer', r.question %>
+        <%= text_field 'answer', r.answer, class: "form-control" %>
+    </div>
+</div>  
+<% end %>   
+<div class="actions">
+        <%= f.submit %>
+      </div>
+<% end %>
