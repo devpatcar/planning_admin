@@ -17,14 +17,20 @@
 
 <section class="container date bg-secondary">
     <div class="row text-center">
-        <div class="col-3">
-        <--
+        <div class="col-3">                  
+            <button type="button" class="btn btn-info w-100 p-3">
+                <%= fa_icon "chevron-left", text: "", left: true %>
+            </button>
         </div>
         <div class="col-6">
-            2017-10-11
+            <button type="button" class="btn btn-primary w-100 p-3">
+                    <%= @selectedDate %>
+            </button>            
         </div>
-        <div class="col-3">
-        -->
+        <div class="col-3">               
+            <button type="button" class="btn btn-info w-100 p-3">
+                <%= fa_icon "chevron-right", text: "", right: true %>
+            </button>            
         </div>    
     </div>
 </section>
@@ -32,7 +38,7 @@
 <section class="container-flex">
     <div class="list-group">
         <% @work.each do |item| %>         
-            <%= link_to item.f_name+": "+item.name, '/work/facility/'+item.id.to_s, class: "list-group-item list-group-item-action" %>  
+            <%= link_to item.f_name+": "+item.t_name, '/work/facility/'+item.f_id.to_s+'/template/'+item.id.to_s, class: "list-group-item list-group-item-action" %>  
         <% end %>  
     </div>
 </section>

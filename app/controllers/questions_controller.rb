@@ -4,7 +4,7 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.order(:question).page params[:page]
+    @questions = Question.where(template_id: template_params[:template_id]).order(:question).page params[:page]
   end
 
   # GET /questions/1
@@ -15,7 +15,7 @@ class QuestionsController < ApplicationController
   # GET /questions/new
   def new
     @question = Question.new
-    @question.template_id = @template.id
+    @question.template_id = template_params[:template_id]
   end
 
   # GET /questions/1/edit

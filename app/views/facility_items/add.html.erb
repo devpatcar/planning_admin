@@ -1,7 +1,7 @@
 <h1><%= @template.name %> - Add Facility Items</h1>
 <%= paginate @facility, theme: 'twitter-bootstrap-4' %>
 <%= page_entries_info @facility %>
-<%= form_tag('/templates/1/addFacilityItems', method: "post") do %>
+<%= form_tag('/templates/'+@template.id.to_s+'/addFacilityItems', method: "post") do %>
 <div id="accordion" role="tablist">
     <% @facility.each do |item| %>
     <div class="card">

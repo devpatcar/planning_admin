@@ -34745,3 +34745,246 @@ Processing by WorkController#index as HTML
 Completed 200 OK in 240ms (Views: 220.0ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-11-14 09:33:14 +0100
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdminController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "protocols" WHERE "protocols"."completed" = ?[0m  [["completed", "t"]]
+  Rendering admin/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "schedulings" WHERE (start_date < '2017-11-14 08:33:15.164288') AND (end_date > '2017-11-14 08:33:15.164798')[0m
+  Rendered admin/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 1436ms (Views: 1386.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-14 09:33:28 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT DISTINCT facilities.name as f_name, facilities.id, templates.name FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" INNER JOIN "facilities" ON "facilities"."id" = "facility_items"."facility_id" WHERE (start_date <'2017-11-14 08:33:28.716208')[0m
+  Rendered work/index.html.erb within layouts/application (72.0ms)
+Completed 200 OK in 231ms (Views: 215.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-14 09:35:58 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT DISTINCT facilities.name as f_name, facilities.id, templates.name FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" INNER JOIN "facilities" ON "facilities"."id" = "facility_items"."facility_id" WHERE (start_date <'2017-11-14 08:35:58.655769')[0m
+  Rendered work/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 143ms (Views: 134.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-14 09:36:17 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[36mTemplate Load (0.5ms)[0m  [1m[34mSELECT DISTINCT facilities.name as f_name, facilities.id, templates.name FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" INNER JOIN "facilities" ON "facilities"."id" = "facility_items"."facility_id" WHERE (start_date <'2017-11-14 08:36:17.240768')[0m
+  Rendered work/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 145ms (Views: 136.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-14 09:36:27 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT DISTINCT facilities.name as f_name, facilities.id, templates.name FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" INNER JOIN "facilities" ON "facilities"."id" = "facility_items"."facility_id" WHERE (start_date <'2017-11-14 08:36:27.076807')[0m
+  Rendered work/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 140ms (Views: 132.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-14 09:38:13 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[36mTemplate Load (1.0ms)[0m  [1m[34mSELECT DISTINCT facilities.name as f_name, facilities.id, templates.name FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" INNER JOIN "facilities" ON "facilities"."id" = "facility_items"."facility_id" WHERE (start_date <'2017-11-14 08:38:13.137453')[0m
+  Rendered work/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 145ms (Views: 134.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-14 09:38:24 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT DISTINCT facilities.name as f_name, facilities.id, templates.name FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" INNER JOIN "facilities" ON "facilities"."id" = "facility_items"."facility_id" WHERE (start_date <'2017-11-14 08:38:24.335054')[0m
+  Rendered work/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 131ms (Views: 122.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-14 09:38:25 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT DISTINCT facilities.name as f_name, facilities.id, templates.name FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" INNER JOIN "facilities" ON "facilities"."id" = "facility_items"."facility_id" WHERE (start_date <'2017-11-14 08:38:25.893881')[0m
+  Rendered work/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 131ms (Views: 122.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-14 09:42:21 +0100
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT DISTINCT facilities.name as f_name, facilities.id, templates.name FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" INNER JOIN "facilities" ON "facilities"."id" = "facility_items"."facility_id" WHERE (start_date <'2017-11-14 08:42:21.604772')[0m
+  Rendered work/index.html.erb within layouts/application (43.0ms)
+Completed 200 OK in 7609ms (Views: 7581.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-14 09:42:49 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT DISTINCT facilities.name as f_name, facilities.id, templates.name FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" INNER JOIN "facilities" ON "facilities"."id" = "facility_items"."facility_id" WHERE (start_date <'2017-11-14 08:42:49.724370')[0m
+  Rendered work/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 168ms (Views: 158.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-14 09:43:02 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT DISTINCT facilities.name as f_name, facilities.id, templates.name FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" INNER JOIN "facilities" ON "facilities"."id" = "facility_items"."facility_id" WHERE (start_date <'2017-11-14 08:43:02.246687')[0m
+  Rendered work/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 144ms (Views: 136.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-14 09:43:12 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT DISTINCT facilities.name as f_name, facilities.id, templates.name FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" INNER JOIN "facilities" ON "facilities"."id" = "facility_items"."facility_id" WHERE (start_date <'2017-11-14 08:43:12.613799')[0m
+  Rendered work/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 144ms (Views: 135.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-14 09:43:20 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT DISTINCT facilities.name as f_name, facilities.id, templates.name FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" INNER JOIN "facilities" ON "facilities"."id" = "facility_items"."facility_id" WHERE (start_date <'2017-11-14 08:43:20.927071')[0m
+  Rendered work/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 144ms (Views: 135.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-14 09:43:36 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[36mTemplate Load (0.5ms)[0m  [1m[34mSELECT DISTINCT facilities.name as f_name, facilities.id, templates.name FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" INNER JOIN "facilities" ON "facilities"."id" = "facility_items"."facility_id" WHERE (start_date <'2017-11-14 08:43:36.750975')[0m
+  Rendered work/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 151ms (Views: 141.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-14 09:43:54 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[36mTemplate Load (0.5ms)[0m  [1m[34mSELECT DISTINCT facilities.name as f_name, facilities.id, templates.name FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" INNER JOIN "facilities" ON "facilities"."id" = "facility_items"."facility_id" WHERE (start_date <'2017-11-14 08:43:54.207426')[0m
+  Rendered work/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 140ms (Views: 130.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-14 09:44:36 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[36mTemplate Load (0.5ms)[0m  [1m[34mSELECT DISTINCT facilities.name as f_name, facilities.id, templates.name FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" INNER JOIN "facilities" ON "facilities"."id" = "facility_items"."facility_id" WHERE (start_date <'2017-11-14 08:44:36.363650')[0m
+  Rendered work/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 137ms (Views: 129.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-14 09:45:25 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT DISTINCT facilities.name as f_name, facilities.id, templates.name FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" INNER JOIN "facilities" ON "facilities"."id" = "facility_items"."facility_id" WHERE (start_date <'2017-11-14 08:45:25.157868')[0m
+  Rendered work/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 138ms (Views: 129.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-14 09:45:54 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT DISTINCT facilities.name as f_name, facilities.id, templates.name FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" INNER JOIN "facilities" ON "facilities"."id" = "facility_items"."facility_id" WHERE (start_date <'2017-11-14 08:45:54.591211')[0m
+  Rendered work/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 139ms (Views: 131.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-14 09:46:08 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT DISTINCT facilities.name as f_name, facilities.id, templates.name FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" INNER JOIN "facilities" ON "facilities"."id" = "facility_items"."facility_id" WHERE (start_date <'2017-11-14 08:46:08.129858')[0m
+  Rendered work/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 142ms (Views: 132.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-14 09:46:14 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[36mTemplate Load (1.0ms)[0m  [1m[34mSELECT DISTINCT facilities.name as f_name, facilities.id, templates.name FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" INNER JOIN "facilities" ON "facilities"."id" = "facility_items"."facility_id" WHERE (start_date <'2017-11-14 08:46:14.830391')[0m
+  Rendered work/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 143ms (Views: 133.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-14 09:46:16 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[36mTemplate Load (0.5ms)[0m  [1m[34mSELECT DISTINCT facilities.name as f_name, facilities.id, templates.name FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" INNER JOIN "facilities" ON "facilities"."id" = "facility_items"."facility_id" WHERE (start_date <'2017-11-14 08:46:16.658895')[0m
+  Rendered work/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 139ms (Views: 131.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-14 09:46:27 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[36mTemplate Load (1.0ms)[0m  [1m[34mSELECT DISTINCT facilities.name as f_name, facilities.id, templates.name FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" INNER JOIN "facilities" ON "facilities"."id" = "facility_items"."facility_id" WHERE (start_date <'2017-11-14 08:46:27.998364')[0m
+  Rendered work/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 140ms (Views: 129.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-14 09:46:41 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT DISTINCT facilities.name as f_name, facilities.id, templates.name FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" INNER JOIN "facilities" ON "facilities"."id" = "facility_items"."facility_id" WHERE (start_date <'2017-11-14 08:46:41.270278')[0m
+  Rendered work/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 139ms (Views: 129.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-14 09:47:33 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT DISTINCT facilities.name as f_name, facilities.id, templates.name FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" INNER JOIN "facilities" ON "facilities"."id" = "facility_items"."facility_id" WHERE (start_date <'2017-11-14 08:47:33.715747')[0m
+  Rendered work/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 140ms (Views: 130.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-14 09:48:09 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT DISTINCT facilities.name as f_name, facilities.id, templates.name FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" INNER JOIN "facilities" ON "facilities"."id" = "facility_items"."facility_id" WHERE (start_date <'2017-11-14 08:48:09.711996')[0m
+  Rendered work/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 147ms (Views: 137.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-14 09:48:47 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT DISTINCT facilities.name as f_name, facilities.id, templates.name FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" INNER JOIN "facilities" ON "facilities"."id" = "facility_items"."facility_id" WHERE (start_date <'2017-11-14 08:48:47.500820')[0m
+  Rendered work/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 139ms (Views: 130.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-14 09:48:55 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[36mTemplate Load (1.0ms)[0m  [1m[34mSELECT DISTINCT facilities.name as f_name, facilities.id, templates.name FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" INNER JOIN "facilities" ON "facilities"."id" = "facility_items"."facility_id" WHERE (start_date <'2017-11-14 08:48:55.369447')[0m
+  Rendered work/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 141ms (Views: 130.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-14 09:49:01 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT DISTINCT facilities.name as f_name, facilities.id, templates.name FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" INNER JOIN "facilities" ON "facilities"."id" = "facility_items"."facility_id" WHERE (start_date <'2017-11-14 08:49:01.322449')[0m
+  Rendered work/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 142ms (Views: 130.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-14 09:53:42 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT DISTINCT facilities.name as f_name, facilities.id, templates.name FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" INNER JOIN "facilities" ON "facilities"."id" = "facility_items"."facility_id" WHERE (start_date <'2017-11-14 08:53:42.247685')[0m
+  Rendered work/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 145ms (Views: 137.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/work" for 127.0.0.1 at 2017-11-14 09:53:45 +0100
+Processing by WorkController#index as HTML
+  Rendering work/index.html.erb within layouts/application
+  [1m[36mTemplate Load (0.0ms)[0m  [1m[34mSELECT DISTINCT facilities.name as f_name, facilities.id, templates.name FROM "templates" INNER JOIN "schedulings" ON "schedulings"."template_id" = "templates"."id" INNER JOIN "template_facility_items" ON "template_facility_items"."template_id" = "templates"."id" INNER JOIN "facility_items" ON "facility_items"."id" = "template_facility_items"."facility_item_id" INNER JOIN "facilities" ON "facilities"."id" = "facility_items"."facility_id" WHERE (start_date <'2017-11-14 08:53:45.708551')[0m
+  Rendered work/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 139ms (Views: 130.9ms | ActiveRecord: 0.0ms)
+
+

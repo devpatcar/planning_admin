@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
   root 'admin#index'
   get '/work', to: 'work#index'
-  get '/work/facility/:facility_id', to: 'work#facility'  
-  get '/work/measure/:template_id', to: 'work#measure'  
-  get '/work/facility_items/:facility_item_id', to: 'work#facility_items'    
-  get '/work/protocol/:template_id', to: 'work#protocol'
+  get '/work/facility/:facility_id/template/:template_id', to: 'work#facility'  
+  get '/work/facility/:facility_id/template/:template_id/facility_item/:facility_item_id', to: 'work#facility_item'  
   resources :users
   resources :results
   resources :protocols
