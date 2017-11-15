@@ -28,10 +28,10 @@ class ProtocolsController < ApplicationController
 
     respond_to do |format|
       if @protocol.save
-        format.html { redirect_to @protocol, notice: 'Protocol was successfully created.' }
+        format.html { redirect_to '/work/facility/151/template/1', notice: 'Protocol was successfully created.' }
         format.json { render :show, status: :created, location: @protocol }
       else
-        format.html { render :new }
+        format.html { redirect_to '/work/facility/151/template/1/facility_item/facility_item/159' }
         format.json { render json: @protocol.errors, status: :unprocessable_entity }
       end
     end
@@ -64,11 +64,11 @@ class ProtocolsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_protocol
-      @protocol = Protocol.find(params[:id])
+      @protocol = Protocol.includes(:results).find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def protocol_params
-      params.require(:protocol).permit(:facility_item_id, :template_id, :result_id, :completed)
+      params.require(:protocol).permit(:facility_id, :facility_item_id, :template_id, :result_id, :completed)
     end
 end
